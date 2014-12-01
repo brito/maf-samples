@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="#{bindings.firstName.inputValue}" id="hdr"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" text="Back" action="back" styleClass="amx-commandButton-back"/>
+        </amx:facet>
+        <amx:panelStretchLayout id="psl1">
+            <amx:facet name="top">
+                <amx:commandLink id="cl6" inlineStyle="margin-top:20px">
+                    <amx:tableLayout width="100%" id="ctl2" inlineStyle="padding-top:15px;">
+                        <amx:rowLayout id="crl2">
+                            <amx:cellFormat width="120px" halign="center" rowSpan="3" id="ccf3" height="44px">
+                                <amx:image source="pics/#{bindings.image.inputValue}"
+                                           id="ci1"
+                                           inlineStyle="margin:0;width:90px;height:90px;;margin-top:2px;-webkit-border-radius:60px;border:1px #ccc solid;"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="ccf6" width="38%" height="38px" valign="bottom">
+                                <amx:outputText value="#{bindings.firstName.inputValue} #{bindings.lastName.inputValue}"
+                                                id="cot2" inlineStyle="margin:0;font-size:22px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf1" width="45px" valign="bottom" halign="center">
+                                <amx:image id="i1" source="/images/func_phone_32@2x.png"
+                                           inlineStyle="width:32px;height:32px;margin-bottom:-9px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf2" width="37%" valign="bottom">
+                                <amx:goLink text="#{bindings.phone.inputValue}" id="gl6"
+                                            url="facetime:#{bindings.phone.inputValue}"
+                                            styleClass="adfmf-goLink-noUnderline"
+                                            rendered="#{deviceScope.device.os eq 'iOS'}"/>
+                                <amx:commandLink text="#{bindings.phone.inputValue}" id="cl2"
+                                                 styleClass="adfmf-commandLink-noUnderline"
+                                                 actionListener="#{UtilBean.sendSMS}"
+                                                 rendered="#{deviceScope.device.os ne 'iOS'}">
+                                    <amx:setPropertyListener id="spl2" from="#{bindings.phone.inputValue}"
+                                                             to="#{applicationScope.sms}"/>
+                                </amx:commandLink>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf3" width="45px" valign="bottom" halign="center">
+                                <amx:image id="i2" source="/images/func_twitter_32@2x.png"
+                                           inlineStyle="width:32px;height:32px;margin-bottom:-9px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf4" width="25%" valign="bottom">
+                                <amx:goLink text="#{bindings.twitter.inputValue}" id="gl4"
+                                            url="twitter://user?screen_name=#{bindings.twitter.inputValue}"
+                                            styleClass="adfmf-goLink-noUnderline"/>
+                            </amx:cellFormat>
+                        </amx:rowLayout>
+                        <amx:rowLayout id="crl3">
+                            <amx:cellFormat height="32px" id="ccf4">
+                                <amx:outputText value="#{bindings.title.inputValue}" id="cot3"
+                                                inlineStyle="margin:0;font-size:18px;color:#595960;"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf5" halign="center">
+                                <amx:image id="i3" source="/images/func_mobilePhone_32@2x.png"
+                                           inlineStyle="width:32px;height:32px;margin-bottom:-6px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf6">
+                                <amx:commandLink text="#{bindings.mobile.inputValue}" id="gl1"
+                                                 styleClass="adfmf-commandLink-noUnderline"
+                                                 actionListener="#{UtilBean.sendSMS}">
+                                    <amx:setPropertyListener id="spl1" from="#{bindings.mobile.inputValue}"
+                                                             to="#{applicationScope.sms}"/>
+                                </amx:commandLink>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf7" halign="center">
+                                <amx:image id="i4" source="/images/func_facebook_32@2x.png"
+                                           inlineStyle="width:32px;height:32px;margin-bottom:-6px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf8">
+                                <amx:goLink text="#{bindings.facebook.inputValue}" id="gl2"
+                                            url="fb://mailbox/compose/#{bindings.facebook.inputValue}"
+                                            styleClass="adfmf-goLink-noUnderline"/>
+                            </amx:cellFormat>
+                        </amx:rowLayout>
+                        <amx:rowLayout id="crl4">
+                            <amx:cellFormat height="38px" id="ccf5" valign="top">
+                                <amx:commandLink text="#{bindings.deptName.inputValue}" id="cl7"
+                                                 actionListener="#{applicationScope.UtilBean.gotoDeptDetail}"
+                                                 inlineStyle="margin:0;font-size:18px"
+                                                 styleClass="adfmf-commandLink-noUnderline">
+                                    <amx:setPropertyListener id="spl4" from="#{bindings.deptId.inputValue}"
+                                                             to="#{applicationScope.UtilBean.id}"/>
+                                </amx:commandLink>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf9" halign="center" valign="top">
+                                <amx:image id="i5" source="/images/func_email_32@2x.png"
+                                           inlineStyle="width:32px;height:32px;margin-top:-4px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf10" valign="top">
+                                <amx:commandLink text="#{bindings.email.inputValue}" id="cl1"
+                                                 styleClass="adfmf-commandLink-noUnderline"
+                                                 actionListener="#{UtilBean.sendEmail}">
+                                    <amx:setPropertyListener id="spl3" from="#{bindings.email.inputValue}"
+                                                             to="#{applicationScope.email}"/>
+                                </amx:commandLink>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf11" halign="center" valign="top">
+                                <amx:image id="i6" source="/images/func_linkedin_32_2x.png"
+                                           inlineStyle="width:32px;height:32px;margin-top:-4px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf12" valign="top">
+                                <amx:goLink text="#{bindings.linkedIn.inputValue}" id="gl3"
+                                            url="linkedin://profile/#{bindings.linkedIn.inputValue}"
+                                            styleClass="adfmf-goLink-noUnderline"/>
+                            </amx:cellFormat>
+                        </amx:rowLayout>
+                    </amx:tableLayout>
+                    <amx:actionListener id="al1" type="swipeEnd" binding="#{bindings.Previous.execute}"/>
+                    <amx:actionListener id="al2" type="swipeStart" binding="#{bindings.Next.execute}"/>
+                </amx:commandLink>
+                <amx:selectOneButton id="sob1" simple="true" value="#{pageFlowScope.summaryView}">
+                    <amx:selectItem id="si1" label="Summary" value="summary"/>
+                    <amx:selectItem id="si2" label="Performance" value="perf"/>
+                    <amx:selectItem id="si3" label="Compensation" value="comp"/>
+                    <amx:selectItem id="si4" label="Timeline" value="time"/>
+                    <amx:selectItem id="si5" label="Team" value="team"/>
+                </amx:selectOneButton>
+                <amx:outputText value="#{bindings.reportCount.inputValue}" id="ot7"
+                                inlineStyle="position:absolute;top:147px;right:38px;font-size:12px"
+                                styleClass="adfmf-outputText-badge"/>
+            </amx:facet>
+            <amx:facet name="center">
+                <amx:fragment src="Fragments/detail.amxf" id="f1" inlineStyle="width:100%;height:100%">
+                    <amx:attribute name="FilmStripLandscape" value="horizontal" id="a3"/>
+                    <amx:attribute name="FilmStripPortrait" value="vertical" id="a4"/>
+                    <amx:attribute name="Colleages" value="#{bindings.colleages}" id="a5"/>
+                    <amx:attribute name="EmpId" value="#{bindings.empId}" id="a6"/>
+                    <amx:attribute name="PerfHistory" value="#{bindings.perfHistory}" id="a7"/>
+                    <amx:attribute name="CompPie" value="#{bindings.pieComps}" id="a8"/>
+                    <amx:attribute name="CompRatio" value="#{bindings.compRatio}" id="a9"/>
+                    <amx:attribute name="CompHistory" value="#{bindings.compHistory}" id="a10"/>
+                    <amx:attribute name="MgrFirstName" value="#{bindings.mgrFirstName}" id="a11"/>
+                    <amx:attribute name="MgrLastName" value="#{bindings.mgrLastName}" id="a12"/>
+                    <amx:attribute name="MgrId" value="#{bindings.mgrId}" id="a13"/>
+                    <amx:attribute name="Address" value="#{bindings.address}" id="a28"/>
+                    <amx:attribute name="City" value="#{bindings.city}" id="a14"/>
+                    <amx:attribute name="State" value="#{bindings.state}" id="a15"/>
+                    <amx:attribute name="Country" value="#{bindings.country}" id="a29"/>
+                    <amx:attribute name="Postal" value="#{bindings.postal}" id="a30"/>
+                    <amx:attribute name="Email" value="#{bindings.email}" id="a16"/>
+                    <amx:attribute name="Phone" value="#{bindings.phone}" id="a17"/>
+                    <amx:attribute name="Mobile" value="#{bindings.mobile}" id="a18"/>
+                    <amx:attribute name="Twitter" value="#{bindings.twitter}" id="a19"/>
+                    <amx:attribute name="Facebook" value="#{bindings.facebook}" id="a20"/>
+                    <amx:attribute name="LinkedIn" value="#{bindings.linkedIn}" id="a21"/>
+                    <amx:attribute name="Rating" value="#{bindings.rating}" id="a22"/>
+                    <amx:attribute name="Potential" value="#{bindings.potential}" id="a23"/>
+                    <amx:attribute name="Tenure" value="#{bindings.tenure}" id="a24"/>
+                    <amx:attribute name="Salary" value="#{bindings.salary}" id="a25"/>
+                    <amx:attribute name="Skills" value="#{bindings.skills}" id="a26"/>
+                    <amx:attribute name="Events" value="#{bindings.events}" id="a27"/>
+                    <amx:attribute name="Reports" value="#{bindings.reports}" id="a31"/>
+                    <amx:attribute name="ReportCount" value="#{bindings.reportCount}" id="a32"/>
+                    <amx:attribute name="MgrImage" value="#{bindings.mgrImage}" id="a33"/>
+                </amx:fragment>
+            </amx:facet>
+        </amx:panelStretchLayout>
+    </amx:panelPage>
+</amx:view>

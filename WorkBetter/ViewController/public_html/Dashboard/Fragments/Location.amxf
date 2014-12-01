@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+    <amx:panelStretchLayout id="location">
+        <amx:facet name="top">
+            <amx:panelGroupLayout id="pgl9" inlineStyle="width:100%;padding-top:10px" halign="center">
+                <amx:outputText value="Department Location and Size" id="ot10"
+                                styleClass="adfmf-outputText-sectionTitle"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="center">
+            <dvtm:thematicMap id="locationtmap" basemap="worldRegions" panning="auto" zooming="auto"
+                              initialZooming="auto" tooltipDisplay="auto" animationDuration="300"
+                              markerZoomBehavior="zoom">
+                <dvtm:areaLayer layer="countries" id="al1">
+                    <dvtm:pointDataLayer id="dl1" value="#{bindings.departments.collectionModel}" var="row"
+                                         selectionListener="#{applicationScope.UtilBean.selectDeptDetail}"
+                                         dataSelection="single">
+                        <dvtm:pointLocation type="pointXY" id="pl1" pointX="#{row.longCoord}" pointY="#{row.latCoord}">
+                            <dvtm:marker id="m1" source="/Organizations/pics/#{row.image}" width="20"
+                                         scaleX="#{row.reportCount > 30 ? row.reportCount : row.reportCount * 3}"
+                                         scaleY="#{row.reportCount > 30 ? row.reportCount : row.reportCount * 3}"
+                                         height="20" opacity=".5">
+                                <amx:setPropertyListener id="spl4" from="#{row.deptId}"
+                                                         to="#{applicationScope.UtilBean.id}"/>
+                            </dvtm:marker>
+                        </dvtm:pointLocation>
+                    </dvtm:pointDataLayer>
+                </dvtm:areaLayer>
+            </dvtm:thematicMap>
+        </amx:facet>
+    </amx:panelStretchLayout>
+</amx:fragmentDef>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+    <amx:panelStretchLayout id="salary">
+        <amx:facet name="top">
+            <amx:panelGroupLayout id="pgl7" inlineStyle="width:100%;padding-top:10px" halign="center">
+                <amx:outputText value="Average Compensation by Department" id="ot8"
+                                styleClass="adfmf-outputText-sectionTitle"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="center">
+            <dvtm:pieChart id="salarypie" var="row" value="#{bindings.departments.collectionModel}"
+                           rolloverBehavior="dim" animationOnDisplay="auto" animationDuration="300"
+                           sliceLabelPosition="none">
+                <amx:facet name="dataStamp">
+                    <dvtm:pieDataItem sliceId="#{row.deptId}" value="#{row.avgTotalComp}" id="pdi1"
+                                      label="#{row.deptName}" sliceLabel="#{row.deptName}" color="#{row.color}"/>
+                </amx:facet>
+                <dvtm:legend position="bottom" id="l1"/>
+            </dvtm:pieChart>
+        </amx:facet>
+    </amx:panelStretchLayout>
+</amx:fragmentDef>

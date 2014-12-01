@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.16.33"
+                id="organizations_organizations_SetCurrentRowWithKeyValuePageDef" Package="Organizations"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="root" RangeSize="25" DataControl="HRService" id="HRServiceIterator"/>
+    <accessorIterator MasterBinding="HRServiceIterator" Binds="departments" RangeSize="25" DataControl="HRService"
+                      BeanClass="mobile.Department" id="departmentsIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="departmentsIterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{applicationScope.UtilBean.id}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

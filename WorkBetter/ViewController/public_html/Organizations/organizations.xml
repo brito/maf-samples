@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+    <task-flow-definition id="organizations">
+        <default-activity>LoadDetail</default-activity>
+        <input-parameter-definition id="__p1">
+            <name>masterView</name>
+            <value>#{pageFlowScope.masterView}</value>
+            <class>java.lang.String</class>
+            <required/>
+        </input-parameter-definition>
+        <input-parameter-definition id="__p2">
+            <name>summaryView</name>
+            <value>#{pageFlowScope.summaryView}</value>
+            <class>java.lang.String</class>
+            <required/>
+        </input-parameter-definition>
+        <input-parameter-definition id="__11">
+            <name>showMeetings</name>
+            <value>#{pageFlowScope.showMeetings}</value>
+            <class>java.lang.Boolean</class>
+            <required/>
+        </input-parameter-definition>
+        <input-parameter-definition id="__13">
+            <name>showEvents</name>
+            <value>#{pageFlowScope.showEvents}</value>
+            <class>java.lang.Boolean</class>
+            <required/>
+        </input-parameter-definition>
+        <input-parameter-definition id="__14">
+            <name>showTraining</name>
+            <value>#{pageFlowScope.showTraining}</value>
+            <class>java.lang.Boolean</class>
+            <required/>
+        </input-parameter-definition>
+        <input-parameter-definition id="__15">
+            <name>showTimeOff</name>
+            <value>#{pageFlowScope.showTimeOff}</value>
+            <class>java.lang.Boolean</class>
+            <required/>
+        </input-parameter-definition>
+        <view id="List">
+            <page>/Organizations/List.amx</page>
+        </view>
+        <view id="Detail_Phone">
+            <page>/Organizations/Detail_Phone.amx</page>
+        </view>
+        <view id="Detail_Tablet">
+            <page>/Organizations/Detail_Tablet.amx</page>
+        </view>
+        <router id="FormFactor">
+            <case id="__10">
+                <expression><?audit suppress oracle.ide.xml.brokenref-warning?><?audit suppress oracle.adfdt.controller.adfc.source.audit.ELUnknownToken?>#{deviceScope.hardware.screen.diagonalSize
+                                                                                                                                                          gt
+                                                                                                                                                          6}</expression>
+                <outcome>tablet</outcome>
+            </case>
+            <default-outcome>phone</default-outcome>
+        </router>
+        <router id="LoadDetail">
+            <case id="__20">
+                <expression><?audit suppress oracle.ide.xml.brokenref-warning?><?audit suppress oracle.adfdt.controller.adfc.source.audit.ELUnknownToken?>#{applicationScope.UtilBean.isDetail}</expression>
+                <outcome>toDetail</outcome>
+            </case>
+            <default-outcome>toList</default-outcome>
+        </router>
+        <method-call id="SetCurrentRowWithKeyValue">
+            <method>#{bindings.setCurrentRowWithKeyValue.execute}</method>
+            <outcome>
+                <fixed-outcome>setCurrentRowWithKeyValue</fixed-outcome>
+            </outcome>
+        </method-call>
+        <control-flow-rule id="__1">
+            <from-activity-id>FormFactor</from-activity-id>
+            <control-flow-case id="__2">
+                <from-outcome>tablet</from-outcome>
+                <to-activity-id>Detail_Tablet</to-activity-id>
+            </control-flow-case>
+            <control-flow-case id="__7">
+                <from-outcome>phone</from-outcome>
+                <to-activity-id>Detail_Phone</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__8">
+            <from-activity-id>List</from-activity-id>
+            <control-flow-case id="__9">
+                <from-outcome>detail</from-outcome>
+                <to-activity-id>FormFactor</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__3">
+            <from-activity-id>Detail_Phone</from-activity-id>
+            <control-flow-case id="__4">
+                <from-outcome>back</from-outcome>
+                <to-activity-id>List</to-activity-id>
+                <transition>slideEnd</transition>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__5">
+            <from-activity-id>Detail_Tablet</from-activity-id>
+            <control-flow-case id="__6">
+                <from-outcome>back</from-outcome>
+                <to-activity-id>List</to-activity-id>
+                <transition>slideEnd</transition>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__12">
+            <from-activity-id>LoadDetail</from-activity-id>
+            <control-flow-case id="__16">
+                <from-outcome>toList</from-outcome>
+                <to-activity-id>List</to-activity-id>
+            </control-flow-case>
+            <control-flow-case id="__17">
+                <from-outcome>toDetail</from-outcome>
+                <to-activity-id>SetCurrentRowWithKeyValue</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__18">
+            <from-activity-id>SetCurrentRowWithKeyValue</from-activity-id>
+            <control-flow-case id="__19">
+                <from-outcome>setCurrentRowWithKeyValue</from-outcome>
+                <to-activity-id>FormFactor</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+    </task-flow-definition>
+</adfc-mobile-config>

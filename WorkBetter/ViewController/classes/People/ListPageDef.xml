@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.21.53" id="ListPageDef" Package="People">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HRService" id="HRServiceIterator"/>
+    <accessorIterator MasterBinding="HRServiceIterator" Binds="employees" RangeSize="15" DataControl="HRService"
+                      BeanClass="mobile.Employee" id="employeesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="employeesIterator" id="employees">
+      <nodeDefinition DefName="mobile.Employee" Name="employees0">
+        <AttrNames>
+          <Item Value="empId"/>
+          <Item Value="address"/>
+          <Item Value="city"/>
+          <Item Value="compRatio"/>
+          <Item Value="country"/>
+          <Item Value="email"/>
+          <Item Value="firstName"/>
+          <Item Value="lastName"/>
+          <Item Value="mobile"/>
+          <Item Value="phone"/>
+          <Item Value="postal"/>
+          <Item Value="rating"/>
+          <Item Value="state"/>
+          <Item Value="tenure"/>
+          <Item Value="title"/>
+          <Item Value="deptName"/>
+          <Item Value="active"/>
+          <Item Value="image"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HRServiceIterator" id="empFilter">
+      <AttrNames>
+        <Item Value="empFilter"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="filterEmployees" RequiresUpdateModel="true" Action="invokeMethod" MethodName="filterEmployees"
+                  IsViewObjectMethod="false" DataControl="HRService" InstanceName="data.HRService.dataProvider"/>
+    <methodAction id="applyActiveEmpRow" RequiresUpdateModel="true" Action="invokeMethod" MethodName="applyActiveEmpRow"
+                  IsViewObjectMethod="false" DataControl="HRService" InstanceName="data.HRService.dataProvider">
+      <NamedData NDName="id" NDValue="#{UtilBean.empId}" NDType="int"/>
+    </methodAction>
+    <methodAction id="gotoSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="gotoSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+  </bindings>
+</pageDefinition>

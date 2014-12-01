@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">266.5</property>
+      <property
+         name="x">91.65625</property>
+   </OverallProperties>
+   <TaskFlowCall
+      id="TaskFlowCall2">
+      <property
+         name="taskFlowId">people</property>
+      <property
+         name="activityId">people</property>
+      <property
+         name="documentReference">/People/people.xml</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>people&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">99.36719</property>
+      <property
+         name="x">91.65625</property>
+   </TaskFlowCall>
+</SDM>

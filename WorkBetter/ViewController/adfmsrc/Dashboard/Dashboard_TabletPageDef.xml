@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.16.33" id="Dashboard_TabletPageDef"
+                Package="Dashboard">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HRService" id="HRServiceIterator"/>
+    <accessorIterator MasterBinding="HRServiceIterator" Binds="departments" RangeSize="-1" DataControl="HRService"
+                      BeanClass="mobile.Department" id="departmentsIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="gotoSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="gotoSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+    <tree IterBinding="departmentsIterator" id="departments">
+      <nodeDefinition DefName="mobile.Department" Name="departments0">
+        <AttrNames>
+          <Item Value="deptId"/>
+          <Item Value="deptName"/>
+          <Item Value="address"/>
+          <Item Value="city"/>
+          <Item Value="state"/>
+          <Item Value="country"/>
+          <Item Value="postal"/>
+          <Item Value="deptMgrId"/>
+          <Item Value="deptMgrFirst"/>
+          <Item Value="deptMgrLast"/>
+          <Item Value="deptMgrTitle"/>
+          <Item Value="deptMgrEmail"/>
+          <Item Value="latCoord"/>
+          <Item Value="longCoord"/>
+          <Item Value="avgTotalComp"/>
+          <Item Value="avgCompRatio"/>
+          <Item Value="avgPerfRating"/>
+          <Item Value="avgPerfPotential"/>
+          <Item Value="reportCount"/>
+          <Item Value="color"/>
+          <Item Value="image"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="pieComps"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="mobile.CompItem" Name="departments1">
+        <AttrNames>
+          <Item Value="itemValue"/>
+          <Item Value="itemLabel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

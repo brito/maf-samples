@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1" styleClass="custom-panelPage-with-springboard">
+        <amx:facet name="header">
+            <amx:outputText value="Dashboard" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink actionListener="#{bindings.gotoSpringboard.execute}" id="cl1" styleClass="custom-springboard-link">
+                <amx:image inlineStyle="width:30px;height:30px"
+                           source="/images/springboard.png" id="i1"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:tableLayout id="tl1" width="100%" cellPadding="10" cellSpacing="20">
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf2" height="#{(deviceScope.hardware.screen.availableHeight-45-100)/2}" width="50%"
+                                inlineStyle="position:relative;border: 1px solid #eee">
+                    <amx:fragment src="/Dashboard/Fragments/Performance.amxf" id="f1"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf1" width="50%" inlineStyle="position:relative;border: 1px solid #eee">
+                    <amx:fragment src="/Dashboard/Fragments/Salary.amxf" id="f2"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl2">
+                <amx:cellFormat id="cf3" height="#{(deviceScope.hardware.screen.availableHeight-45-100)/2}" width="50%"
+                                inlineStyle="position:relative;border: 1px solid #eee">
+                    <amx:fragment src="/Dashboard/Fragments/Location.amxf" id="f3"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf4" width="50%" inlineStyle="position:relative;;border: 1px solid #eee">
+                    <amx:fragment src="/Dashboard/Fragments/Compensation.amxf" id="f4"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+    </amx:panelPage>
+</amx:view>

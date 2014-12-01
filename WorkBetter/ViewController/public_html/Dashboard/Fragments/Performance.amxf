@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+    <amx:panelStretchLayout id="perf">
+        <amx:facet name="top">
+            <amx:panelGroupLayout id="pgl6" inlineStyle="width:100%;padding-top:10px" halign="center">
+                <amx:outputText value="Average Performance by Department" id="ot7"
+                                styleClass="adfmf-outputText-sectionTitle"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="center">
+            <dvtm:nBox id="perfnbox" var="ent" rowsTitle="Potential" value="#{bindings.departments.collectionModel}"
+                       columnsTitle="Performance" nodeSelection="single"
+                       selectionListener="#{applicationScope.UtilBean.selectDeptDetail}">
+                <amx:facet name="rows">
+                    <dvtm:nBoxRow id="nbr1" value="low"/>
+                    <dvtm:nBoxRow id="nbr2" value="med"/>
+                    <dvtm:nBoxRow id="nbr3" value="high"/>
+                </amx:facet>
+                <amx:facet name="columns">
+                    <dvtm:nBoxColumn id="nbc1" value="low"/>
+                    <dvtm:nBoxColumn id="nbc2" value="med"/>
+                    <dvtm:nBoxColumn id="nbc3" value="high"/>
+                </amx:facet>
+                <amx:facet name="cells">
+                    <dvtm:nBoxCell id="nbce1" row="low" column="low" background="rgb(234,153,153)"/>
+                    <dvtm:nBoxCell id="nbce2" row="med" column="low" background="rgb(234,153,153)"/>
+                    <dvtm:nBoxCell id="nbce3" row="high" column="low" background="rgb(159,197,248)"/>
+                    <dvtm:nBoxCell id="nbce4" row="low" column="med" background="rgb(255,229,153)"/>
+                    <dvtm:nBoxCell id="nbce5" row="med" column="med" background="rgb(255,229,153)"/>
+                    <dvtm:nBoxCell id="nbce6" row="high" column="med" background="rgb(147,196,125)"/>
+                    <dvtm:nBoxCell id="nbce7" row="low" column="high" background="rgb(255,229,153)"/>
+                    <dvtm:nBoxCell id="nbce8" row="med" column="high" background="rgb(147,196,125)"/>
+                    <dvtm:nBoxCell id="nbce9" row="high" column="high" background="rgb(147,196,125)"/>
+                </amx:facet>
+                <dvtm:nBoxNode id="nbn1" column="#{ent.avgPerfRating}" row="#{ent.avgPerfPotential}" color="none">
+                    <amx:facet name="icon">
+                        <dvtm:marker id="mrk1" source="/Organizations/pics/#{ent.image}" width="28" height="28">
+                            <amx:setPropertyListener id="spl5" from="#{ent.deptId}"
+                                                     to="#{applicationScope.UtilBean.id}"/>
+                        </dvtm:marker>
+                    </amx:facet>
+                </dvtm:nBoxNode>
+            </dvtm:nBox>
+        </amx:facet>
+    </amx:panelStretchLayout>
+</amx:fragmentDef>

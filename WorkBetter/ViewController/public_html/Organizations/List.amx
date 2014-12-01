@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1" styleClass="custom-panelPage-with-springboard">
+        <amx:facet name="header">
+            <amx:outputText value="Organizations" id="hdr"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink actionListener="#{bindings.gotoSpringboard.execute}" id="cl1" styleClass="custom-springboard-link">
+                <amx:image inlineStyle="width:30px;height:30px"
+                           source="/images/springboard.png" id="i1"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:fragment src="/Fragments/Master.amxf" id="f1" inlineStyle="width:100%;height:100%">
+            <amx:attribute name="Type" value="dept" id="a17"/>
+            <amx:attribute name="Collection" value="#{bindings.departments}" id="a3"/>
+            <amx:attribute name="SearchText" value="Enter Name" id="a12"/>
+            <amx:attribute name="FilterAttr" value="#{bindings.deptFilter}" id="a21"/>
+            <amx:attribute name="FilterMethod" value="#{bindings.filterDepartments}" id="a22"/>
+            <amx:attribute name="Image" value="image" id="a13"/>
+            <amx:attribute name="Divider" value="deptName" id="a16"/>
+            <amx:attribute name="Title1a" value="deptName" id="a14"/>
+            <amx:attribute name="Title2" value="city" id="a8"/>
+            <amx:attribute name="Title3" value="deptMgrFirst" id="a4"/>
+            <amx:attribute name="Title3b" value="deptMgrLast" id="a1"/>
+            <amx:attribute name="Detail1" value="deptId" id="a11"/>
+            <amx:attribute name="Address" value="address" id="a9"/>
+            <amx:attribute name="City" value="city" id="a2"/>
+            <amx:attribute name="State" value="state" id="a5"/>
+            <amx:attribute name="Country" value="country" id="a6"/>
+            <amx:attribute name="Postal" value="postal" id="a10"/>
+        </amx:fragment>
+    </amx:panelPage>
+</amx:view>

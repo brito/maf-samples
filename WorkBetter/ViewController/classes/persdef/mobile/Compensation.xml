@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Compensation"
+  Version="12.1.3.22.46">
+  <DesignTime>
+    <Attr Name="_DCName" Value="mobile.DataControls.HRService"/>
+    <Attr Name="_SDName" Value="mobile.Compensation"/>
+  </DesignTime>
+  <PDefAttribute
+    Name="compId"
+    PrimaryKey="true"/>
+</PDefViewObject>

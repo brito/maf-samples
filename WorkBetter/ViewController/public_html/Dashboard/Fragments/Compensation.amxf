@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+    <amx:panelStretchLayout id="comp">
+        <amx:facet name="top">
+            <amx:panelGroupLayout id="pgl8" inlineStyle="width:100%;padding-top:10px" halign="center">
+                <amx:outputText value="Total Compensation by Department" id="ot9"
+                                styleClass="adfmf-outputText-sectionTitle"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="center">
+            <dvtm:treemap id="t1" value="#{bindings.departments.collectionModel}" var="row"
+                          inlineStyle="border:none; background-color:transparent;" nodeSelection="single"
+                          selectionListener="#{applicationScope.UtilBean.selectDeptDetail}">
+                <dvtm:treemapNode value="#{row.avgTotalComp}" label="#{row.deptName}" id="tn1"
+                                  fillColor="#{row.color}"/>
+            </dvtm:treemap>
+        </amx:facet>
+    </amx:panelStretchLayout>
+</amx:fragmentDef>

@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <Router
+      id="Router2">
+      <property
+         name="activityId">FormFactor</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>FormFactor&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Router&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">301.73438</property>
+      <property
+         name="x">227.0</property>
+   </Router>
+   <View
+      id="View3">
+      <property
+         name="activityId">Dashboard_Phone</property>
+      <property
+         name="page">/Dashboard/Dashboard_Phone.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Dashboard_Phone&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">232.36719</property>
+      <property
+         name="x">439.38867</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">Dashboard_Tablet</property>
+      <property
+         name="page">/Dashboard/Dashboard_Tablet.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Dashboard_Tablet&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">379.10156</property>
+      <property
+         name="x">437.80176</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="Router2"
+      to="View3">
+      <property
+         name="fromOutcome">phone</property>
+      <property
+         name="sdm:polyPoints">R46,268.0,298.16797,398.38867,232.30078,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="Router2"
+      to="View4">
+      <property
+         name="fromOutcome">tablet</property>
+      <property
+         name="sdm:polyPoints">R54,268.0,305.16797,396.80176,379.03516,L50</property>
+   </ControlFlowCase>
+</SDM>

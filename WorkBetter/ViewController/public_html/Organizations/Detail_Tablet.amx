@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="#{bindings.deptName.inputValue}" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" text="Back" action="back" styleClass="amx-commandButton-back"/>
+        </amx:facet>
+        <amx:panelStretchLayout id="psl1">
+            <amx:facet name="top">
+                <amx:commandLink id="cl6" inlineStyle="margin-top:20px">
+                    <amx:tableLayout width="100%" id="ctl2" inlineStyle="padding-top:15px;">
+                        <amx:rowLayout id="crl2">
+                            <amx:cellFormat width="120px" halign="center" rowSpan="3" id="ccf3" height="44px">
+                                <amx:image source="pics/#{bindings.image.inputValue}" id="ci1"
+                                           inlineStyle="margin:0;width:90px;height:90px;;margin-top:2px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="ccf6" width="50%" height="38px" valign="bottom">
+                                <amx:outputText value="#{bindings.deptName.inputValue}" id="cot2"
+                                                inlineStyle="margin:0;font-size:22px"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf1" width="120px" halign="center" rowSpan="3">
+                                <amx:image source="/People/pics/#{bindings.deptMgrImage.inputValue}"
+                                           id="i1"
+                                           inlineStyle="margin:0;width:90px;height:90px;;margin-top:2px;-webkit-border-radius:60px;border:1px #ccc solid;"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf2" width="50%" valign="bottom">
+                                <amx:commandLink text="#{bindings.deptMgrFirst.inputValue} #{bindings.deptMgrLast.inputValue}"
+                                                 actionListener="#{applicationScope.UtilBean.gotoPersonDetail}" id="cl2"
+                                                 styleClass="adfmf-commandLink-noUnderline">
+                                    <amx:setPropertyListener id="spl4" from="#{bindings.deptMgrId.inputValue}"
+                                                             to="#{applicationScope.UtilBean.id}"/>
+                                </amx:commandLink>
+                            </amx:cellFormat>
+                        </amx:rowLayout>
+                        <amx:rowLayout id="crl3">
+                            <amx:cellFormat height="32px" id="ccf4">
+                                <amx:outputText value="#{bindings.city.inputValue},#{bindings.state.inputValue}"
+                                                id="cot3" inlineStyle="margin:0;font-size:18px;color:#595960;"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf5">
+                                <amx:outputText value="#{bindings.deptMgrTitle.inputValue}" id="ot2"
+                                                inlineStyle="margin:0;font-size:18px;color:#595960"/>
+                            </amx:cellFormat>
+                        </amx:rowLayout>
+                        <amx:rowLayout id="crl4">
+                            <amx:cellFormat height="38px" id="ccf5" valign="top">
+                                <amx:outputText value="Cost Center: CC#{bindings.deptId.inputValue}A" id="ot3"
+                                                inlineStyle="margin:0;font-size:18px;color:#595960;"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf9" valign="top">
+                                <amx:commandLink text="#{bindings.deptMgrEmail.inputValue}" id="cl1"
+                                                 styleClass="adfmf-commandLink-noUnderline"
+                                                 actionListener="#{UtilBean.sendEmail}">
+                                    <amx:setPropertyListener id="spl3" from="#{bindings.deptMgrEmail.inputValue}"
+                                                             to="#{applicationScope.email}"/>
+                                </amx:commandLink>
+                            </amx:cellFormat>
+                        </amx:rowLayout>
+                    </amx:tableLayout>
+                    <amx:actionListener id="al1" type="swipeEnd" binding="#{bindings.Previous.execute}"/>
+                    <amx:actionListener id="al2" type="swipeStart" binding="#{bindings.Next.execute}"/>
+                </amx:commandLink>
+                <amx:selectOneButton id="sob1" simple="true" value="#{pageFlowScope.summaryView}">
+                    <amx:selectItem id="si1" label="Summary" value="summary"/>
+                    <amx:selectItem id="si2" label="Schedule" value="schedule"/>
+                    <amx:selectItem id="si3" label="Team" value="team"/>
+                </amx:selectOneButton>
+                <amx:outputText value="#{bindings.reportCount.inputValue}" id="ot7"
+                                inlineStyle="position:absolute;top:147px;right:38px;font-size:12px"
+                                styleClass="adfmf-outputText-badge"/>
+            </amx:facet>
+            <amx:facet name="center">
+                <amx:fragment src="Fragments/detail.amxf" id="f1" inlineStyle="width:100%;height:100%">
+                    <amx:attribute name="FilmStripLandscape" value="horizontal" id="a3"/>
+                    <amx:attribute name="FilmStripPortrait" value="vertical" id="a4"/>
+                    <amx:attribute name="DeptId" value="#{bindings.deptId}" id="a6"/>
+                    <amx:attribute name="TeamPerfs" value="#{bindings.teamPerfs}" id="a7"/>
+                    <amx:attribute name="CompPie" value="#{bindings.pieComps}" id="a8"/>
+                    <amx:attribute name="DeptMgrFirst" value="#{bindings.deptMgrFirst}" id="a11"/>
+                    <amx:attribute name="DeptMgrLast" value="#{bindings.deptMgrLast}" id="a12"/>
+                    <amx:attribute name="DeptMgrId" value="#{bindings.deptMgrId}" id="a13"/>
+                    <amx:attribute name="Address" value="#{bindings.address}" id="a28"/>
+                    <amx:attribute name="City" value="#{bindings.city}" id="a14"/>
+                    <amx:attribute name="State" value="#{bindings.state}" id="a15"/>
+                    <amx:attribute name="Country" value="#{bindings.country}" id="a29"/>
+                    <amx:attribute name="Postal" value="#{bindings.postal}" id="a30"/>
+                    <amx:attribute name="Events" value="#{bindings.events}" id="a27"/>
+                    <amx:attribute name="Reports" value="#{bindings.reports}" id="a31"/>
+                    <amx:attribute name="ReportCount" value="#{bindings.reportCount}" id="a32"/>
+                </amx:fragment>
+            </amx:facet>
+        </amx:panelStretchLayout>
+    </amx:panelPage>
+</amx:view>

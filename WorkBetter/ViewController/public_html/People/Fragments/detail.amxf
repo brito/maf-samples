@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1">
+        <description id="d1">Detail fragment to show the deck of detail pages</description>
+        <attribute id="a3">
+            <description id="a3de">A string defining the filmstrip orientation to use when the device is in Landscape mode</description>
+            <attribute-name id="a3n">FilmStripLandscape</attribute-name>
+            <attribute-type id="a3t">String</attribute-type>
+            <required id="a3r">true</required>
+        </attribute>
+        <attribute id="a4">
+            <description id="a4de">A string defining the filmstrip orientation to use when the device is in Portraite mode</description>
+            <attribute-name id="a4n">FilmStripPortrait</attribute-name>
+            <attribute-type id="a4t">String</attribute-type>
+            <required id="a4r">true</required>
+        </attribute>
+        <attribute id="a5">
+            <description id="a5de">An employee collection of the colleages of the current employee</description>
+            <attribute-name id="a5n">Colleages</attribute-name>
+            <attribute-type id="a5t">Tree Binding</attribute-type>
+            <required id="a5r">true</required>
+        </attribute>
+        <attribute id="a6">
+            <description id="a6de">The employee id of the current employee</description>
+            <attribute-name id="a6n">EmpId</attribute-name>
+            <attribute-type id="a6t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a7">
+            <description id="a7de">An employee performance history collection for the current employee</description>
+            <attribute-name id="a7n">PerfHistory</attribute-name>
+            <attribute-type id="a7t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a8">
+            <description id="a8de">The compRatio of the current employee</description>
+            <attribute-name id="a8n">CompRatio</attribute-name>
+            <attribute-type id="a8t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a9">
+            <description id="a9de">An employee compensation history collection for the current employee</description>
+            <attribute-name id="a9n">CompHistory</attribute-name>
+            <attribute-type id="a9t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a10">
+            <description id="a10de">An employee compensation pie data collection </description>
+            <attribute-name id="a10n">CompPie</attribute-name>
+            <attribute-type id="a10t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a11">
+            <description id="a11de">The attribute binding for the employee manager's first name</description>
+            <attribute-name id="a11n">MgrFirstName</attribute-name>
+            <attribute-type id="a11t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a12">
+            <description id="a12de">The attribute binding for the employee manager's last name</description>
+            <attribute-name id="a12n">MgrLastName</attribute-name>
+            <attribute-type id="a12t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a13">
+            <description id="a13de">The attribute binding for the employee's city</description>
+            <attribute-name id="a13n">City</attribute-name>
+            <attribute-type id="a13t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a14">
+            <description id="a14de">The attribute binding for the employee's state</description>
+            <attribute-name id="a14n">State</attribute-name>
+            <attribute-type id="a14t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a15">
+            <description id="a15de">The attribute binding for the employee's email</description>
+            <attribute-name id="a15n">Email</attribute-name>
+            <attribute-type id="a15t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a16">
+            <description id="a16de">The attribute binding for the employee's phone</description>
+            <attribute-name id="a16n">Phone</attribute-name>
+            <attribute-type id="a16t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a17">
+            <description id="a17de">The attribute binding for the employee's mobile</description>
+            <attribute-name id="a17n">Mobile</attribute-name>
+            <attribute-type id="a17t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a18">
+            <description id="a18de">The attribute binding for the employee's twitter</description>
+            <attribute-name id="a18n">Twitter</attribute-name>
+            <attribute-type id="a18t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a19">
+            <description id="a19de">The attribute binding for the employee's facebook</description>
+            <attribute-name id="a19n">Facebook</attribute-name>
+            <attribute-type id="a19t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a20">
+            <description id="a20de">The attribute binding for the employee's linkedin</description>
+            <attribute-name id="a20n">LinkedIn</attribute-name>
+            <attribute-type id="a20t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a21">
+            <description id="a21de">The attribute binding for the employee manager's id</description>
+            <attribute-name id="a21n">MgrId</attribute-name>
+            <attribute-type id="a21t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a22">
+            <description id="a22de">The attribute binding for the employee rating</description>
+            <attribute-name id="a22n">Rating</attribute-name>
+            <attribute-type id="a22t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a23">
+            <description id="a23de">The attribute binding for the employee potential</description>
+            <attribute-name id="a23n">Potential</attribute-name>
+            <attribute-type id="a23t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a24">
+            <description id="a24de">The attribute binding for the employee tenure</description>
+            <attribute-name id="a24n">Tenure</attribute-name>
+            <attribute-type id="a24t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a25">
+            <description id="a25de">The attribute binding for the employee salary</description>
+            <attribute-name id="a25n">Salary</attribute-name>
+            <attribute-type id="a25t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a26">
+            <description id="a26de">An employee skills collection for the current employee</description>
+            <attribute-name id="a26n">Skills</attribute-name>
+            <attribute-type id="a26t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a27">
+            <description id="a27de">An employee events collection for the current employee</description>
+            <attribute-name id="a27n">Events</attribute-name>
+            <attribute-type id="a27t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a28">
+            <description id="a28de">The address for the current employee</description>
+            <attribute-name id="a28n">Address</attribute-name>
+            <attribute-type id="a28t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a29">
+            <description id="a29de">The country for the current employee</description>
+            <attribute-name id="a29n">Country</attribute-name>
+            <attribute-type id="a29t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a30">
+            <description id="a30de">The postal for the current employee</description>
+            <attribute-name id="a30n">Postal</attribute-name>
+            <attribute-type id="a30t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a31">
+            <description id="a31de">An employee's Reports collection for the current employee</description>
+            <attribute-name id="a31n">Reports</attribute-name>
+            <attribute-type id="a31t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a32">
+            <description id="a32de">The number of reports this employee has</description>
+            <attribute-name id="a32n">ReportCount</attribute-name>
+            <attribute-type id="a32t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a33">
+            <description id="a33de">The attribute binding for the employee manager's image</description>
+            <attribute-name id="a33n">MgrImage</attribute-name>
+            <attribute-type id="a33t">Attribute Binding</attribute-type>
+        </attribute>
+    </fragment>
+    <amx:deck id="deck1" displayedChild="#{pageFlowScope.summaryView}" inlineStyle="width:100%;height:100%">
+        <amx:transition triggerType="backNavigate" id="t1" transition="slideEnd"/>
+        <amx:transition triggerType="forwardNavigate" id="t2" transition="slideStart"/>
+        <amx:filmStrip id="summary" orientation="horizontal"
+                       pageControlPosition="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'none' : 'bottom'}"
+                       halign="center" valign="middle"
+                       inlineStyle="width:#{deviceScope.hardware.screen.availableWidth}px" itemsPerPage="1"
+                       styleClass="amx-filmStrip-stretchItems">
+            <amx:filmStripItem id="summaryp1" rendered="#{deviceScope.hardware.screen.diagonalSize le 6}">
+                <amx:listView id="lv1" styleClass="listViewNoSelect">
+                    <amx:listItem showLinkIcon="false" id="spli5">
+                        <amx:tableLayout width="100%" id="sptl5">
+                            <amx:rowLayout id="sprl5">
+                                <amx:cellFormat width="40px" halign="center" id="spcf51">
+                                    <amx:image source="/images/func_mobilePhone_32@2x.png" id="spi5"
+                                               styleClass="profilesummary_image"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="100%" height="43px" id="spcf52">
+                                    <amx:commandLink text="#{Mobile.inputValue}" id="cl3"
+                                                     styleClass="adfmf-commandLink-noUnderline"
+                                                     actionListener="#{UtilBean.sendSMS}">
+                                        <amx:setPropertyListener id="spl3" from="#{Mobile.inputValue}"
+                                                                 to="#{applicationScope.sms}"/>
+                                    </amx:commandLink>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                    <amx:listItem showLinkIcon="false" id="spli4">
+                        <amx:tableLayout width="100%" id="sptl4">
+                            <amx:rowLayout id="sprl4">
+                                <amx:cellFormat width="40px" halign="center" id="spcf41">
+                                    <amx:image source="/images/func_phone_32@2x.png" id="spi4"
+                                               styleClass="profilesummary_image"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="100%" height="43px" id="spcf42">
+                                    <amx:goLink text="#{Phone.inputValue}" id="gl6" url="facetime:#{Phone.inputValue}"
+                                                styleClass="adfmf-goLink-noUnderline"
+                                                rendered="#{deviceScope.device.os eq 'iOS'}"/>
+                                    <amx:commandLink text="#{Phone.inputValue}" id="cl2"
+                                                     styleClass="adfmf-commandLink-noUnderline"
+                                                     actionListener="#{UtilBean.sendSMS}"
+                                                     rendered="#{deviceScope.device.os ne 'iOS'}">
+                                        <amx:setPropertyListener id="spl2" from="#{Phone.inputValue}"
+                                                                 to="#{applicationScope.sms}"/>
+                                    </amx:commandLink>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                    <amx:listItem showLinkIcon="false" id="spli3">
+                        <amx:tableLayout width="100%" id="sptl3">
+                            <amx:rowLayout id="sprl3">
+                                <amx:cellFormat width="40px" halign="center" id="spcf31">
+                                    <amx:image source="/images/func_email_32@2x.png" id="spi3"
+                                               styleClass="profilesummary_image"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="100%" height="43px" id="spcf32">
+                                    <amx:commandLink text="#{Email.inputValue}" id="gl1"
+                                                     styleClass="adfmf-commandLink-noUnderline"
+                                                     actionListener="#{UtilBean.sendEmail}">
+                                        <amx:setPropertyListener id="spl1" from="#{Email.inputValue}"
+                                                                 to="#{applicationScope.email}"/>
+                                    </amx:commandLink>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                    <amx:listItem showLinkIcon="false" id="spli6">
+                        <amx:tableLayout width="100%" id="sptl6">
+                            <amx:rowLayout id="sprl6">
+                                <amx:cellFormat width="40px" halign="center" id="spcf61">
+                                    <amx:image source="/images/func_twitter_32@2x.png" id="spi6"
+                                               styleClass="profilesummary_image"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="100%" height="43px" id="spcf62">
+                                    <amx:goLink text="#{Twitter.inputValue}" id="gl4"
+                                                url="twitter://user?screen_name=#{Twitter.inputValue}"
+                                                styleClass="adfmf-goLink-noUnderline"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                    <amx:listItem showLinkIcon="false" id="spli7">
+                        <amx:tableLayout width="100%" id="sptl7">
+                            <amx:rowLayout id="sprl7">
+                                <amx:cellFormat width="40px" halign="center" id="spcf71">
+                                    <amx:image source="/images/func_facebook_32@2x.png" id="spi7"
+                                               styleClass="profilesummary_image"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="100%" height="43px" id="spcf72">
+                                    <amx:goLink text="#{Facebook.inputValue}" id="gl2"
+                                                url="fb://mailbox/compose/#{Facebook.inputValue}"
+                                                styleClass="adfmf-goLink-noUnderline"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                    <amx:listItem showLinkIcon="false" id="spli8">
+                        <amx:tableLayout width="100%" id="sptl8">
+                            <amx:rowLayout id="sprl8">
+                                <amx:cellFormat width="40px" halign="center" id="spcf81">
+                                    <amx:image source="/images/func_linkedin_32_2x.png" id="spi8"
+                                               styleClass="profilesummary_image"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="100%" height="43px" id="spcf82">
+                                    <amx:goLink text="#{LinkedIn.inputValue}" id="gl3"
+                                                url="linkedin://profile/#{LinkedIn.inputValue}"
+                                                styleClass="adfmf-goLink-noUnderline"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                    <amx:listItem showLinkIcon="false" id="spli2">
+                        <amx:tableLayout width="100%" id="sptl2">
+                            <amx:rowLayout id="sprl2">
+                                <amx:cellFormat width="40px" halign="center" id="spcf21">
+                                    <amx:image source="/images/func_gps_32@2x.png" id="spi2"
+                                               styleClass="profilesummary_image"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="100%" height="43px" id="spcf22">
+                                    <amx:outputText value="#{City.inputValue}, #{State.inputValue}" id="cl1"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                    <amx:listItem showLinkIcon="false" id="spli1" rendered="#{MgrId.inputValue gt 0}">
+                        <amx:tableLayout width="100%" id="sptl1">
+                            <amx:rowLayout id="sprl1">
+                                <amx:cellFormat width="40px" halign="center" id="spcf11">
+                                    <amx:image source="pics/#{MgrImage.inputValue}"
+                                               id="i5"
+                                               inlineStyle="width:25px;height:25px;-webkit-border-radius:25px;border:1px #ccc solid;margin-top:4px"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat height="43px" id="cf34" width="100%">
+                                    <amx:panelGroupLayout id="pgl3" layout="horizontal" valign="bottom">
+                                        <amx:commandLink text="#{MgrFirstName.inputValue} #{MgrLastName.inputValue}"
+                                                         id="ot13"
+                                                         actionListener="#{applicationScope.UtilBean.gotoPersonDetail}"
+                                                         styleClass="adfmf-commandLink-noUnderline">
+                                            <amx:setPropertyListener id="spl4" from="#{MgrId.inputValue}"
+                                                                     to="#{applicationScope.UtilBean.id}"/>
+                                        </amx:commandLink>
+                                        <amx:spacer id="s3" width="10"/>
+                                        <amx:outputText value="(Manager)" id="ot57" inlineStyle="color:#595960"/>
+                                    </amx:panelGroupLayout>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                </amx:listView>
+            </amx:filmStripItem>
+            <amx:filmStripItem id="summaryp2" rendered="#{deviceScope.hardware.screen.diagonalSize le 6}">
+                <amx:panelStretchLayout id="psl5" scrollPolicy="scroll">
+                    <amx:facet name="center">
+                        <amx:tableLayout id="sprating" width="100%">
+                            <amx:rowLayout id="perfhdrs">
+                                <amx:cellFormat id="cfrating" width="50%" halign="center">
+                                    <amx:outputText value="RATING" id="otrating" inlineStyle="font-weight:lighter"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat id="cfpotential" width="50%" halign="center">
+                                    <amx:outputText value="POTENTIAL" id="otpotential"
+                                                    inlineStyle="font-weight:lighter"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="perfleds">
+                                <amx:cellFormat id="cfratingled" width="50%" halign="center">
+                                    <dvtm:ledGauge id="ledrating" value="#{Rating.inputValue}"
+                                                   inlineStyle="padding:5px;height:60px;width:60px">
+                                        <dvtm:threshold id="tl11" maxValue="2" color="#ED6647"/>
+                                        <dvtm:threshold id="tl12" maxValue="3" color="#FAD55C"/>
+                                        <dvtm:threshold id="tl14" maxValue="5" color="#68C182"/>
+                                    </dvtm:ledGauge>
+                                </amx:cellFormat>
+                                <amx:cellFormat id="cfpotentialled" width="50%" halign="center">
+                                    <dvtm:ledGauge id="ledpotential" value="#{Potential.inputValue}"
+                                                   inlineStyle="padding:5px;height:60px;width:60px">
+                                        <dvtm:threshold id="t2t1" maxValue="2" color="#ED6647"/>
+                                        <dvtm:threshold id="t2t2" maxValue="3" color="#FAD55C"/>
+                                        <dvtm:threshold id="t2t4" maxValue="5" color="#68C182"/>
+                                    </dvtm:ledGauge>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="perfftrs">
+                                <amx:cellFormat id="cfratingftr" width="50%" halign="center">
+                                    <amx:outputText value="Below" id="otratingftr1" rendered="#{Rating.inputValue lt 3}"
+                                                    styleClass="profilesummary_subtext"/>
+                                    <amx:outputText value="Average" id="otratingftr2"
+                                                    rendered="#{Rating.inputValue eq 3}"
+                                                    styleClass="profilesummary_subtext"/>
+                                    <amx:outputText value="Outstanding" id="otratingftr3"
+                                                    rendered="#{Rating.inputValue eq 4}"
+                                                    styleClass="profilesummary_subtext"/>
+                                    <amx:outputText value="Exceptional" id="otratingftr4"
+                                                    rendered="#{Rating.inputValue eq 5}"
+                                                    styleClass="profilesummary_subtext"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat id="cfpotentialftr" width="50%" halign="center">
+                                    <amx:outputText value="Below" id="otpotenftr1"
+                                                    rendered="#{Potential.inputValue lt 3}"
+                                                    styleClass="profilesummary_subtext"/>
+                                    <amx:outputText value="Average" id="otpotenftr2"
+                                                    rendered="#{Potential.inputValue eq 3}"
+                                                    styleClass="profilesummary_subtext"/>
+                                    <amx:outputText value="Outstanding" id="otpotenftr3"
+                                                    rendered="#{Potential.inputValue eq 4}"
+                                                    styleClass="profilesummary_subtext"/>
+                                    <amx:outputText value="Exceptional" id="otpotenftr4"
+                                                    rendered="#{Potential.inputValue eq 5}"
+                                                    styleClass="profilesummary_subtext"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="ro2">
+                                <amx:cellFormat id="cftenurehdr" width="50%" halign="center" height="40"
+                                                valign="bottom">
+                                    <amx:outputText value="TENURE" id="ottenurehdr1" inlineStyle="font-weight:lighter"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat id="cfcomphdr" width="50%" halign="center" height="40" valign="bottom">
+                                    <amx:outputText value="COMP RATIO" id="cfcomphdr1"
+                                                    inlineStyle="font-weight:lighter"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="compleds">
+                                <amx:cellFormat id="cftenled" width="50%" halign="center">
+                                    <dvtm:ledGauge id="ledGauge1" value="#{Tenure.inputValue}"
+                                                   inlineStyle="padding:5px;height:60px;width:60px">
+                                        <dvtm:threshold id="l1tent1" maxValue="4" color="#FAD55C"/>
+                                        <dvtm:threshold id="l1tent2" maxValue="6" color="#0572ce"/>
+                                        <dvtm:threshold id="l1tent3" maxValue="10" color="#68C182"/>
+                                    </dvtm:ledGauge>
+                                </amx:cellFormat>
+                                <amx:cellFormat id="cfcompled" width="50%" halign="center">
+                                    <dvtm:statusMeterGauge id="statusMeterGauge1" orientation="circular"
+                                                           value="#{CompRatio.inputValue}"
+                                                           inlineStyle="padding:5px;height:60px;width:60px"
+                                                           minValue="80" maxValue="120" plotArea="on"
+                                                           thresholdDisplay="currentOnly" indicatorSize=".2"
+                                                           color="Black" animationOnDataChange="auto"
+                                                           animationDuration="300" animationOnDisplay="auto">
+                                        <dvtm:threshold id="tthcomp1" maxValue="85" color="#ED6647"/>
+                                        <dvtm:threshold id="tthcomp2" maxValue="93" color="#FAD55C"/>
+                                        <dvtm:threshold id="tthcomp3" maxValue="107" color="#68C182"/>
+                                        <dvtm:threshold id="tthcomp4" maxValue="115" color="#FAD55C"/>
+                                        <dvtm:threshold id="tthcomp5" maxValue="120" color="#ED6647"/>
+                                        <dvtm:referenceLine id="rl21" lineStyle="solid" value="100" color="black"/>
+                                        <dvtm:metricLabel id="ml2">
+                                            <amx:convertNumber id="cn2" integerOnly="true"/>
+                                        </dvtm:metricLabel>
+                                    </dvtm:statusMeterGauge>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="compftrs">
+                                <amx:cellFormat id="cftenftr" width="50%" halign="center" height="40px" valign="top">
+                                    <amx:outputText value="Years" id="ottenftr1" styleClass="profilesummary_subtext"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat id="cfcompftr" width="50%" halign="center" valign="top">
+                                    <amx:outputText value="#{Salary.inputValue}" id="otsalftr1"
+                                                    styleClass="profilesummary_subtext">
+                                        <amx:convertNumber id="cn1" type="currency" maxFractionDigits="0"
+                                                           integerOnly="true" groupingUsed="true" currencySymbol="$"/>
+                                    </amx:outputText>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+            <amx:filmStripItem id="summaryp3" rendered="#{deviceScope.hardware.screen.diagonalSize le 6}">
+                <amx:panelStretchLayout id="psl7" scrollPolicy="scroll">
+                    <amx:facet name="top">
+                        <amx:tableLayout id="tl4" width="100%">
+                            <amx:rowLayout id="rl13">
+                                <amx:cellFormat id="cf26" width="100%" halign="center">
+                                    <amx:outputText value="SKILLS" id="ot4" inlineStyle="font-weight:lighter"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                    <amx:facet name="center">
+                        <amx:iterator id="i2" value="#{Skills.collectionModel}" var="row">
+                            <amx:outputText value="#{row.skill}" id="ot6"
+                                            inlineStyle="-webkit-border-radius: 4px;border: 1px #0572ce solid;margin:5px;padding:10px;display:inline-block"/>
+                        </amx:iterator>
+                    </amx:facet>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+            <amx:filmStripItem id="summaryp4" rendered="#{deviceScope.hardware.screen.diagonalSize le 6}">
+                <amx:panelStretchLayout id="psl6" scrollPolicy="scroll">
+                    <amx:facet name="top">
+                        <amx:tableLayout id="tl9" width="100%">
+                            <amx:rowLayout id="rl23">
+                                <amx:cellFormat id="cf7" width="100%" halign="center">
+                                    <amx:outputText value="LOCATION" id="ot17" inlineStyle="font-weight:lighter"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                    <amx:facet name="center">
+                        <dvtm:geographicMap id="geomp1">
+                            <dvtm:pointDataLayer id="pdl1" dataSelection="none">
+                                <dvtm:pointLocation id="pl1" type="address"
+                                                    address="#{Address.inputValue}, #{City.inputValue}, #{State.inputValue}, #{Country.inputValue}">
+                                    <dvtm:marker id="m1"/>
+                                </dvtm:pointLocation>
+                            </dvtm:pointDataLayer>
+                        </dvtm:geographicMap>
+                    </amx:facet>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+            <amx:filmStripItem id="summaryt" rendered="#{deviceScope.hardware.screen.diagonalSize gt 6}">
+                <amx:tableLayout id="tl3" width="100%">
+                    <amx:rowLayout id="rl8">
+                        <amx:cellFormat id="cf10" width="25%" halign="center">
+                            <amx:outputText value="RATING" id="totrating" inlineStyle="font-weight:lighter"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf11" width="25%" halign="center">
+                            <amx:outputText value="POTENTIAL" id="totpotential" inlineStyle="font-weight:lighter"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf12" width="25%" halign="center">
+                            <amx:outputText value="TENURE" id="tottenurehdr1" inlineStyle="font-weight:lighter"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf13" width="25%" halign="center">
+                            <amx:outputText value="COMP RATIO" id="tcfcomphdr1" inlineStyle="font-weight:lighter"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl7">
+                        <amx:cellFormat id="cf14" halign="center">
+                            <dvtm:ledGauge id="tledrating" value="#{Rating.inputValue}"
+                                           inlineStyle="padding:5px;height:90px;width:90px">
+                                <dvtm:threshold id="tl1t1" maxValue="2" color="#ED6647"/>
+                                <dvtm:threshold id="tl1t2" maxValue="3" color="#FAD55C"/>
+                                <dvtm:threshold id="tl1t4" maxValue="5" color="#68C182"/>
+                            </dvtm:ledGauge>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf15" halign="center">
+                            <dvtm:ledGauge id="tledpotential" value="#{Potential.inputValue}"
+                                           inlineStyle="padding:5px;height:90px;width:90px">
+                                <dvtm:threshold id="tl2t1" maxValue="2" color="#ED6647"/>
+                                <dvtm:threshold id="tl2t2" maxValue="3" color="#FAD55C"/>
+                                <dvtm:threshold id="tl2t4" maxValue="5" color="#68C182"/>
+                            </dvtm:ledGauge>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf16" halign="center">
+                            <dvtm:ledGauge id="tledGauge1" value="#{Tenure.inputValue}"
+                                           inlineStyle="padding:5px;height:90px;width:90px">
+                                <dvtm:threshold id="tl1tent1" maxValue="4" color="#FAD55C"/>
+                                <dvtm:threshold id="tl1tent2" maxValue="6" color="#0572ce"/>
+                                <dvtm:threshold id="tl1tent3" maxValue="10" color="#68C182"/>
+                            </dvtm:ledGauge>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf17" halign="center">
+                            <dvtm:statusMeterGauge id="smg1" orientation="circular" value="#{CompRatio.inputValue}"
+                                                   inlineStyle="padding:5px;height:90px;width:90px" minValue="80"
+                                                   maxValue="120" plotArea="on" thresholdDisplay="currentOnly"
+                                                   indicatorSize=".2" color="Black" animationOnDataChange="auto"
+                                                   animationDuration="300" animationOnDisplay="auto">
+                                <dvtm:threshold id="t3" maxValue="85" color="#ED6647"/>
+                                <dvtm:threshold id="t4" maxValue="93" color="#FAD55C"/>
+                                <dvtm:threshold id="t5" maxValue="107" color="#68C182"/>
+                                <dvtm:threshold id="t6" maxValue="115" color="#FAD55C"/>
+                                <dvtm:threshold id="t7" maxValue="120" color="#ED6647"/>
+                                <dvtm:referenceLine id="rl22" lineStyle="solid" value="100" color="black"/>
+                                <dvtm:metricLabel id="ml3">
+                                    <amx:convertNumber id="cn3" integerOnly="true"/>
+                                </dvtm:metricLabel>
+                            </dvtm:statusMeterGauge>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl9">
+                        <amx:cellFormat id="cf18" halign="center">
+                            <amx:outputText value="Below" id="ttratingftr1" rendered="#{Rating.inputValue lt 3}"
+                                            styleClass="profilesummary_subtext"/>
+                            <amx:outputText value="Average" id="ttratingftr2" rendered="#{Rating.inputValue eq 3}"
+                                            styleClass="profilesummary_subtext"/>
+                            <amx:outputText value="Outstanding" id="ttratingftr3" rendered="#{Rating.inputValue eq 4}"
+                                            styleClass="profilesummary_subtext"/>
+                            <amx:outputText value="Exceptional" id="ttratingftr4" rendered="#{Rating.inputValue eq 5}"
+                                            styleClass="profilesummary_subtext"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf19" halign="center">
+                            <amx:outputText value="Below" id="totpotenftr1" rendered="#{Potential.inputValue lt 3}"
+                                            styleClass="profilesummary_subtext"/>
+                            <amx:outputText value="Average" id="ttpotenftr2" rendered="#{Potential.inputValue eq 3}"
+                                            styleClass="profilesummary_subtext"/>
+                            <amx:outputText value="Outstanding" id="ttpotenftr3" rendered="#{Potential.inputValue eq 4}"
+                                            styleClass="profilesummary_subtext"/>
+                            <amx:outputText value="Exceptional" id="ttpotenftr4" rendered="#{Potential.inputValue eq 5}"
+                                            styleClass="profilesummary_subtext"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf20" halign="center">
+                            <amx:outputText value="Years" id="tottenftr1" styleClass="profilesummary_subtext"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf21" halign="center">
+                            <amx:outputText value="#{Salary.inputValue}" id="totsalftr1"
+                                            styleClass="profilesummary_subtext">
+                                <amx:convertNumber id="tcn1" type="currency" maxFractionDigits="0" integerOnly="true"
+                                                   groupingUsed="true" currencySymbol="$"/>
+                            </amx:outputText>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl10">
+                        <amx:cellFormat id="cf22" columnSpan="2" width="50%" height="50px" inlineStyle="padding:5px"
+                                        valign="bottom">
+                            <amx:outputText value="MANAGER" id="ot8"
+                                            inlineStyle="font-weight:lighter;padding-left:10px"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf23" columnSpan="2" width="50%" inlineStyle="padding:5px" valign="bottom">
+                            <amx:outputText value="LOCATION" id="ot5"
+                                            inlineStyle="font-weight:lighter;margin-left:10px;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl11">
+                        <amx:cellFormat id="cf24" columnSpan="2" width="50%"
+                                        height="#{deviceScope.hardware.screen.availableHeight-470}px" valign="top"
+                                        inlineStyle="padding-right:10px">
+                            <amx:panelStretchLayout id="psl4"
+                                                    inlineStyle="position:relative;width:100%;height:99%;white-space:normal;padding-left:10px"
+                                                    scrollPolicy="scroll">
+                                <amx:facet name="top">
+                                    <amx:listView id="lv2">
+                                        <amx:listItem showLinkIcon="false" id="li1">
+                                            <amx:tableLayout width="100%" id="tl8">
+                                                <amx:rowLayout id="rl20">
+                                                    <amx:cellFormat width="40px" halign="center" id="cf35">
+                                                        <amx:image source="pics/#{MgrImage.inputValue}"
+                                                                   id="i6"
+                                                                   inlineStyle="width:32px;height:32px;-webkit-border-radius:30px;border:1px #ccc solid;margin-top:4px"
+                                                                   rendered="#{MgrId.inputValue gt 0}"/>
+                                                    </amx:cellFormat>
+                                                    <amx:cellFormat width="100%" height="43px" id="cf36">
+                                                        <amx:outputText value="none" id="ot16"
+                                                                        rendered="#{MgrId.inputValue eq 0}"/>
+                                                        <amx:commandLink text="#{MgrFirstName.inputValue} #{MgrLastName.inputValue}"
+                                                                         id="cl5" rendered="#{MgrId.inputValue gt 0}"
+                                                                         actionListener="#{applicationScope.UtilBean.gotoPersonDetail}"
+                                                                         styleClass="adfmf-commandLink-noUnderline">
+                                                            <amx:setPropertyListener id="spl6"
+                                                                                     from="#{MgrId.inputValue}"
+                                                                                     to="#{applicationScope.UtilBean.id}"/>
+                                                        </amx:commandLink>
+                                                    </amx:cellFormat>
+                                                </amx:rowLayout>
+                                            </amx:tableLayout>
+                                        </amx:listItem>
+                                    </amx:listView>
+                                    <amx:spacer id="s2" height="50"/>
+                                    <amx:outputText value="SKILLS" id="ot14"
+                                                    inlineStyle="font-weight:lighter;margin-left:5px;"/>
+                                </amx:facet>
+                                <amx:facet name="center">
+                                    <amx:iterator id="i1" value="#{Skills.collectionModel}" var="row">
+                                        <amx:outputText value="#{row.skill}" id="ot2"
+                                                        inlineStyle="-webkit-border-radius: 4px;border: 1px #0572ce solid;margin:5px;padding:10px;display:inline-block"/>
+                                    </amx:iterator>
+                                </amx:facet>
+                            </amx:panelStretchLayout>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf25" columnSpan="2" width="50%" valign="top"
+                                        inlineStyle="padding-left:10px">
+                            <dvtm:geographicMap id="gm1"
+                                                inlineStyle="width:#{deviceScope.hardware.screen.availableWidth / 2 - 30}px;height:99%">
+                                <dvtm:pointDataLayer id="pdl2">
+                                    <dvtm:pointLocation id="pl2" type="address"
+                                                        address="#{Address.inputValue}, #{City.inputValue}, #{State.inputValue}, #{Country.inputValue}">
+                                        <dvtm:marker id="m2"/>
+                                    </dvtm:pointLocation>
+                                </dvtm:pointDataLayer>
+                            </dvtm:geographicMap>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:filmStripItem>
+        </amx:filmStrip>
+        <amx:filmStrip id="perf" itemsPerPage="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 2 : 1}"
+                       orientation="#{deviceScope.hardware.screen.availableWidth gt deviceScope.hardware.screen.availableHeight ? FilmStripLandscape : FilmStripPortrait}"
+                       pageControlPosition="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'none' : 'bottom'}"
+                       halign="center" valign="middle" inlineStyle="width:100%" styleClass="amx-filmStrip-stretchItems">
+            <amx:filmStripItem id="perfi1">
+                <amx:panelStretchLayout id="psl1">
+                    <amx:facet name="top">
+                        <amx:tableLayout id="tl1" width="100%">
+                            <amx:rowLayout id="rl2">
+                                <amx:cellFormat id="cf9" width="100%" halign="center" columnSpan="3" valign="top"
+                                                height="40px">
+                                    <amx:outputText value="CURRENT" id="ot1"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl3">
+                                <amx:cellFormat id="cf2" width="50%"/>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                    <amx:facet name="center">
+                        <dvtm:nBox id="nb1" var="ent" rowsTitle="Potential" value="#{Colleages.collectionModel}"
+                                   columnsTitle="Performance"
+                                   selectionListener="#{applicationScope.UtilBean.selectPersonDetail}"
+                                   nodeSelection="single">
+                            <amx:facet name="rows">
+                                <dvtm:nBoxRow id="nbr1" value="low"/>
+                                <dvtm:nBoxRow id="nbr2" value="med"/>
+                                <dvtm:nBoxRow id="nbr3" value="high"/>
+                            </amx:facet>
+                            <amx:facet name="columns">
+                                <dvtm:nBoxColumn id="nbc1" value="low"/>
+                                <dvtm:nBoxColumn id="nbc2" value="med"/>
+                                <dvtm:nBoxColumn id="nbc3" value="high"/>
+                            </amx:facet>
+                            <amx:facet name="cells">
+                                <dvtm:nBoxCell id="nbce1" row="low" column="low" background="rgb(234,153,153)"/>
+                                <dvtm:nBoxCell id="nbce2" row="med" column="low" background="rgb(234,153,153)"/>
+                                <dvtm:nBoxCell id="nbce3" row="high" column="low" background="rgb(159,197,248)"/>
+                                <dvtm:nBoxCell id="nbce4" row="low" column="med" background="rgb(255,229,153)"/>
+                                <dvtm:nBoxCell id="nbce5" row="med" column="med" background="rgb(255,229,153)"/>
+                                <dvtm:nBoxCell id="nbce6" row="high" column="med" background="rgb(147,196,125)"/>
+                                <dvtm:nBoxCell id="nbce7" row="low" column="high" background="rgb(255,229,153)"/>
+                                <dvtm:nBoxCell id="nbce8" row="med" column="high" background="rgb(147,196,125)"/>
+                                <dvtm:nBoxCell id="nbce9" row="high" column="high" background="rgb(147,196,125)"/>
+                            </amx:facet>
+                            <dvtm:nBoxNode id="nbn1" column="#{ent.nboxRating}" row="#{ent.nboxPotential}">
+                                <amx:facet name="icon">
+                                    <dvtm:marker id="mrk1" source="pics/#{ent.image}"
+                                                 width="28" height="28">
+                                        <amx:setPropertyListener id="spl5" from="#{ent.empId}"
+                                                                 to="#{applicationScope.UtilBean.id}"/>
+                                    </dvtm:marker>
+                                </amx:facet>
+                            </dvtm:nBoxNode>
+                        </dvtm:nBox>
+                    </amx:facet>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+            <amx:filmStripItem id="perfi2">
+                <amx:panelStretchLayout id="psl9">
+                    <amx:facet name="top">
+                        <amx:tableLayout id="tl7" width="100%">
+                            <amx:rowLayout id="rl18">
+                                <amx:cellFormat id="cf32" width="100%" halign="center" columnSpan="3" valign="top"
+                                                height="40px">
+                                    <amx:outputText value="HISTORY" id="ot12"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl19">
+                                <amx:cellFormat id="cf33" width="50%"/>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                    <amx:facet name="center">
+                        <dvtm:comboChart var="row" value="#{PerfHistory.collectionModel}" id="bc1"
+                                         animationOnDisplay="auto" animationDuration="300" rolloverBehavior="dim"
+                                         animationOnDataChange="auto" animationIndicators="none" timeAxisType="enabled">
+                            <amx:facet name="dataStamp">
+                                <dvtm:chartDataItem group="#{row.effective}" value="#{row.rating}"
+                                                    series="#{PerfHistory.hints.rating.label}" id="cdi2"/>
+                                <dvtm:chartDataItem group="#{row.effective}" value="#{row.potential}"
+                                                    series="#{PerfHistory.hints.potential.label}" id="cdi1"/>
+                            </amx:facet>
+                            <dvtm:legend rendered="false" id="l1"/>
+                            <amx:facet name="seriesStamp">
+                                <dvtm:seriesStyle series="#{PerfHistory.hints.rating.label}" type="bar"/>
+                                <dvtm:seriesStyle series="#{PerfHistory.hints.potential.label}" type="line"/>
+                            </amx:facet>
+                        </dvtm:comboChart>
+                    </amx:facet>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+        </amx:filmStrip>
+        <amx:filmStrip id="comp" itemsPerPage="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 2 : 1}"
+                       orientation="#{deviceScope.hardware.screen.availableWidth gt deviceScope.hardware.screen.availableHeight ? FilmStripLandscape : FilmStripPortrait}"
+                       pageControlPosition="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'none' : 'bottom'}"
+                       halign="center" valign="middle" inlineStyle="width:100%" styleClass="amx-filmStrip-stretchItems">
+            <amx:filmStripItem id="compi1">
+                <amx:panelStretchLayout id="psl8">
+                    <amx:facet name="top">
+                        <amx:tableLayout id="tl6" width="100%">
+                            <amx:rowLayout id="rl16">
+                                <amx:cellFormat id="cf30" width="100%" halign="center" valign="top" height="40px">
+                                    <amx:outputText value="CURRENT" id="ot11"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl17">
+                                <amx:cellFormat id="cf6" width="100%" halign="center">
+                                    <amx:outputText value="Compensation Ratio" id="ot3" inlineStyle="font-size: 14px"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl4">
+                                <amx:cellFormat id="cf8" width="100%" halign="center">
+                                    <dvtm:statusMeterGauge id="compratiogauge" value="#{CompRatio.inputValue}"
+                                                           shortDesc="CompRatio" minValue="80" maxValue="120"
+                                                           color="black" indicatorSize="0.2" animationOnDisplay="auto"
+                                                           animationDuration="300" thresholdDisplay="all"
+                                                           animationOnDataChange="auto"
+                                                           inlineStyle="width:80%;height:20px" plotArea="on">
+                                        <dvtm:threshold id="t8" maxValue="85" color="#ED6647"/>
+                                        <dvtm:threshold id="t9" maxValue="93" color="#FAD55C"/>
+                                        <dvtm:threshold id="t10" maxValue="107" color="#68C182"/>
+                                        <dvtm:threshold id="t11" maxValue="115" color="#FAD55C"/>
+                                        <dvtm:threshold id="t12" maxValue="120" color="#ED6647"/>
+                                        <dvtm:referenceLine id="rl1" lineStyle="solid" value="100" color="black"/>
+                                        <dvtm:metricLabel id="ml1">
+                                            <amx:convertNumber id="cn4" integerOnly="true"/>
+                                        </dvtm:metricLabel>
+                                    </dvtm:statusMeterGauge>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                    <amx:facet name="center">
+                        <dvtm:pieChart var="row" value="#{CompPie.collectionModel}" id="pc1" animationDuration="300"
+                                       animationOnDisplay="auto" rolloverBehavior="dim" sliceLabelPosition="inside"
+                                       animationOnDataChange="auto">
+                            <amx:facet name="dataStamp">
+                                <dvtm:pieDataItem sliceId="#{row.itemLabel}" value="#{row.itemValue}" id="pdi1"
+                                                  label="#{row.itemLabel}" explode="100" sliceLabel="#{row.itemLabel}"/>
+                            </amx:facet>
+                            <dvtm:legend position="bottom" id="lp1"/>
+                        </dvtm:pieChart>
+                    </amx:facet>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+            <amx:filmStripItem id="compfi2">
+                <amx:panelStretchLayout id="psl2">
+                    <amx:facet name="top">
+                        <amx:tableLayout id="tl2" width="100%">
+                            <amx:rowLayout id="rl5">
+                                <amx:cellFormat id="cf4" width="100%" halign="center">
+                                    <amx:outputText value="HISTORY" id="othistory"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl6">
+                                <amx:cellFormat id="cf5" width="100%" halign="center" height="40"/>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                    <amx:facet name="center">
+                        <dvtm:barChart var="row" value="#{CompHistory.collectionModel}" id="bc2" stack="on"
+                                       timeAxisType="enabled" rolloverBehavior="dim" animationOnDataChange="auto"
+                                       animationDuration="300" animationOnDisplay="auto">
+                            <amx:facet name="dataStamp">
+                                <dvtm:chartDataItem group="#{row.effective}" value="#{row.salary}"
+                                                    series="#{CompHistory.hints.salary.label}" id="cdi3"/>
+                                <dvtm:chartDataItem group="#{row.effective}" value="#{row.bonus}"
+                                                    series="#{CompHistory.hints.bonus.label}" id="cdi4"/>
+                                <dvtm:chartDataItem group="#{row.effective}" value="#{row.commission}"
+                                                    series="#{CompHistory.hints.commission.label}" id="cdi5"/>
+                            </amx:facet>
+                            <dvtm:legend rendered="false" id="l2"/>
+                        </dvtm:barChart>
+                    </amx:facet>
+                    <amx:facet name="bottom"/>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+        </amx:filmStrip>
+        <dvtm:timeline id="time" startTime="#{applicationScope.UtilBean.timelineStart}"
+                       endTime="#{applicationScope.UtilBean.timelineEnd}" inlineStyle="height:100%;width:100%"
+                       itemSelection="single">
+            <dvtm:timelineSeries id="ts2" var="evt" value="#{Events.collectionModel}">
+                <dvtm:timelineItem startTime="#{evt.start}" endTime="#{evt.end}" title="#{evt.name}" id="ti2"
+                                   description="#{evt.description}" durationFillColor="#{evt.color}"/>
+            </dvtm:timelineSeries>
+            <dvtm:timeAxis id="ta1" scale="weeks"/>
+        </dvtm:timeline>
+        <amx:panelGroupLayout id="team" inlineStyle="width:100%;height:100%" halign="center" scrollPolicy="scroll">
+            <amx:panelGroupLayout id="pgl2" rendered="#{ReportCount.inputValue eq 0}">
+                <amx:spacer id="s1" height="50"/>
+                <amx:image id="i7" source="/images/watermark_noreports_96@2x.png"
+                           inlineStyle="width:96px;height:96px;"/>
+                <amx:outputText value="This employee has no reports" id="ot9"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="teamwithreps" inlineStyle="height:100%;width:100%" scrollPolicy="scroll"
+                                  layout="wrap" rendered="#{ReportCount.inputValue gt 0}">
+                <amx:iterator var="row" value="#{Reports.collectionModel}" id="i3">
+                    <amx:panelGroupLayout id="pgl1"
+                                          inlineStyle="width:#{deviceScope.hardware.screen.diagonalSize gt 6 ? '120px' : '90px'};background-color: #f6f6f7;border: 1px solid #e7e7e9;margin:5px">
+                        <amx:commandLink id="cl4" actionListener="#{applicationScope.UtilBean.gotoPersonDetail}">
+                            <amx:tableLayout id="tl5" width="100%">
+                                <amx:rowLayout id="rl12">
+                                    <amx:cellFormat id="cf27" width="100%" halign="center">
+                                        <amx:image source="pics/#{row.image}" id="i4"
+                                                   inlineStyle="-webkit-border-radius:#{deviceScope.hardware.screen.diagonalSize gt 6 ? '90px;width:90px;height:90px' : '60px;width:60px;height:60px'};border:1px #ccc solid;margin-top:4px"/>
+                                    </amx:cellFormat>
+                                </amx:rowLayout>
+                                <amx:rowLayout id="rl15">
+                                    <amx:cellFormat id="cf29" width="100%" halign="center">
+                                        <amx:outputText value="#{row.firstName} #{row.lastName}" id="ot7"
+                                                        inlineStyle="font-weight:lighter;font-size:#{deviceScope.hardware.screen.diagonalSize gt 6 ? '12px' : '10px'}"/>
+                                    </amx:cellFormat>
+                                </amx:rowLayout>
+                            </amx:tableLayout>
+                            <amx:setPropertyListener id="spl7" from="#{row.empId}"
+                                                     to="#{applicationScope.UtilBean.id}"/>
+                        </amx:commandLink>
+                    </amx:panelGroupLayout>
+                </amx:iterator>
+            </amx:panelGroupLayout>
+        </amx:panelGroupLayout>
+    </amx:deck>
+</amx:fragmentDef>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:loadBundle basename="mobile.ViewControllerBundle" var="viewcontrollerBundle" id="lb1"/>
+    <amx:panelPage id="pp1" styleClass="custom-panelPage-with-springboard">
+        <amx:facet name="header">
+            <amx:outputText value="#{viewcontrollerBundle.People}" id="hdr"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink actionListener="#{bindings.gotoSpringboard.execute}" id="cl1" styleClass="custom-springboard-link">
+                <amx:image inlineStyle="width:30px;height:30px"
+                           source="/images/springboard.png" id="i1"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:fragment src="/Fragments/Master.amxf" id="f1" inlineStyle="width:100%;height:100%">
+            <amx:attribute name="Type" value="emp" id="a17"/>
+            <amx:attribute name="Collection" value="#{bindings.employees}" id="a3"/>
+            <amx:attribute name="SearchText" value="Enter Name" id="a12"/>
+            <amx:attribute name="FilterAttr" value="#{bindings.empFilter}" id="a21"/>
+            <amx:attribute name="FilterMethod" value="#{bindings.filterEmployees}" id="a22"/>
+            <amx:attribute name="Image" value="image" id="a13"/>
+            <amx:attribute name="Divider" value="lastName" id="a16"/>
+            <amx:attribute name="Title1a" value="firstName" id="a14"/>
+            <amx:attribute name="Title1b" value="lastName" id="a15"/>
+            <amx:attribute name="Title2" value="title" id="a8"/>
+            <amx:attribute name="Title3" value="deptName" id="a4"/>
+            <amx:attribute name="Detail1" value="phone" id="a11"/>
+            <amx:attribute name="Detail2" value="mobile" id="a7"/>
+            <amx:attribute name="Detail3" value="email" id="a1"/>
+            <amx:attribute name="Address" value="address" id="a9"/>
+            <amx:attribute name="City" value="city" id="a2"/>
+            <amx:attribute name="State" value="state" id="a5"/>
+            <amx:attribute name="Country" value="country" id="a6"/>
+            <amx:attribute name="Postal" value="postal" id="a10"/>
+            <amx:attribute name="LED1" value="tenure" id="a18"/>
+            <amx:attribute name="LED2" value="rating" id="a19"/>
+            <amx:attribute name="LED3" value="compRatio" id="a20"/>
+            <amx:attribute name="ActivateMethod" value="#{bindings.applyActiveEmpRow}" id="a23"/>
+        </amx:fragment>
+    </amx:panelPage>
+</amx:view>

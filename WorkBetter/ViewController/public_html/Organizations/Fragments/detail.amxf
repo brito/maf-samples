@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1">
+        <description id="d1">Detail fragment to show the deck of detail pages</description>
+        <attribute id="a3">
+            <description id="a3de">A string defining the filmstrip orientation to use when the device is in Landscape mode</description>
+            <attribute-name id="a3n">FilmStripLandscape</attribute-name>
+            <attribute-type id="a3t">String</attribute-type>
+            <required id="a3r">true</required>
+        </attribute>
+        <attribute id="a4">
+            <description id="a4de">A string defining the filmstrip orientation to use when the device is in Portraite mode</description>
+            <attribute-name id="a4n">FilmStripPortrait</attribute-name>
+            <attribute-type id="a4t">String</attribute-type>
+            <required id="a4r">true</required>
+        </attribute>
+        <attribute id="a6">
+            <description id="a6de">The organization id of the current organization</description>
+            <attribute-name id="a6n">DeptId</attribute-name>
+            <attribute-type id="a6t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a10">
+            <description id="a10de">An organization compensation pie data collection </description>
+            <attribute-name id="a10n">CompPie</attribute-name>
+            <attribute-type id="a10t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a11">
+            <description id="a11de">The attribute binding for the organization manager's first name</description>
+            <attribute-name id="a11n">DeptMgrFirst</attribute-name>
+            <attribute-type id="a11t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a12">
+            <description id="a12de">The attribute binding for the organization manager's last name</description>
+            <attribute-name id="a12n">DeptMgrLast</attribute-name>
+            <attribute-type id="a12t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a13">
+            <description id="a13de">The attribute binding for the organization's city</description>
+            <attribute-name id="a13n">City</attribute-name>
+            <attribute-type id="a13t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a14">
+            <description id="a14de">The attribute binding for the organization's state</description>
+            <attribute-name id="a14n">State</attribute-name>
+            <attribute-type id="a14t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a21">
+            <description id="a21de">The attribute binding for the organization manager's id</description>
+            <attribute-name id="a21n">DeptMgrId</attribute-name>
+            <attribute-type id="a21t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a27">
+            <description id="a27de">An organization events collection for the current organization</description>
+            <attribute-name id="a27n">Events</attribute-name>
+            <attribute-type id="a27t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a1">
+            <description id="a1de">An organization Performance collection for the current organization</description>
+            <attribute-name id="a1n">TeamPerfs</attribute-name>
+            <attribute-type id="a1t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a28">
+            <description id="a28de">The address for the current organization</description>
+            <attribute-name id="a28n">Address</attribute-name>
+            <attribute-type id="a28t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a29">
+            <description id="a29de">The country for the current organization</description>
+            <attribute-name id="a29n">Country</attribute-name>
+            <attribute-type id="a29t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a30">
+            <description id="a30de">The postal for the current organization</description>
+            <attribute-name id="a30n">Postal</attribute-name>
+            <attribute-type id="a30t">Attribute Binding</attribute-type>
+        </attribute>
+        <attribute id="a31">
+            <description id="a31de">An organization's Reports collection for the current organization</description>
+            <attribute-name id="a31n">Reports</attribute-name>
+            <attribute-type id="a31t">Tree Binding</attribute-type>
+        </attribute>
+        <attribute id="a32">
+            <description id="a32de">The number of reports this organization has</description>
+            <attribute-name id="a32n">ReportCount</attribute-name>
+            <attribute-type id="a32t">Attribute Binding</attribute-type>
+        </attribute>
+    </fragment>
+    <amx:deck id="deck1" displayedChild="#{pageFlowScope.summaryView}" inlineStyle="width:100%;height:100%">
+        <amx:transition triggerType="backNavigate" id="t1" transition="slideEnd"/>
+        <amx:transition triggerType="forwardNavigate" id="t2" transition="slideStart"/>
+        <amx:filmStrip id="summary" itemsPerPage="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 2 : 1}"
+                       orientation="#{deviceScope.hardware.screen.availableWidth gt deviceScope.hardware.screen.availableHeight ? FilmStripLandscape : FilmStripPortrait}"
+                       pageControlPosition="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'none' : 'bottom'}"
+                       halign="center" valign="middle" inlineStyle="width:100%" styleClass="amx-filmStrip-stretchItems">
+            <amx:filmStripItem id="perfi1">
+                <amx:panelStretchLayout id="psl1">
+                    <amx:facet name="top">
+                        <amx:tableLayout id="tl1" width="100%">
+                            <amx:rowLayout id="rl2">
+                                <amx:cellFormat id="cf1" width="100%" halign="center" columnSpan="3" valign="top"
+                                                height="40px">
+                                    <amx:outputText value="PERFORMANCE" id="ot1"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl3">
+                                <amx:cellFormat id="cf2" width="50%"/>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                    <amx:facet name="center">
+                        <dvtm:nBox id="nb1" var="ent" rowsTitle="Potential" value="#{TeamPerfs.collectionModel}"
+                                   columnsTitle="Performance" nodeSelection="single"
+                                   selectionListener="#{applicationScope.UtilBean.selectPersonDetail}">
+                            <amx:facet name="rows">
+                                <dvtm:nBoxRow id="nbr1" value="low"/>
+                                <dvtm:nBoxRow id="nbr2" value="med"/>
+                                <dvtm:nBoxRow id="nbr3" value="high"/>
+                            </amx:facet>
+                            <amx:facet name="columns">
+                                <dvtm:nBoxColumn id="nbc1" value="low"/>
+                                <dvtm:nBoxColumn id="nbc2" value="med"/>
+                                <dvtm:nBoxColumn id="nbc3" value="high"/>
+                            </amx:facet>
+                            <amx:facet name="cells">
+                                <dvtm:nBoxCell id="nbce1" row="low" column="low" background="rgb(234,153,153)"/>
+                                <dvtm:nBoxCell id="nbce2" row="med" column="low" background="rgb(234,153,153)"/>
+                                <dvtm:nBoxCell id="nbce3" row="high" column="low" background="rgb(159,197,248)"/>
+                                <dvtm:nBoxCell id="nbce4" row="low" column="med" background="rgb(255,229,153)"/>
+                                <dvtm:nBoxCell id="nbce5" row="med" column="med" background="rgb(255,229,153)"/>
+                                <dvtm:nBoxCell id="nbce6" row="high" column="med" background="rgb(147,196,125)"/>
+                                <dvtm:nBoxCell id="nbce7" row="low" column="high" background="rgb(255,229,153)"/>
+                                <dvtm:nBoxCell id="nbce8" row="med" column="high" background="rgb(147,196,125)"/>
+                                <dvtm:nBoxCell id="nbce9" row="high" column="high" background="rgb(147,196,125)"/>
+                            </amx:facet>
+                            <dvtm:nBoxNode id="nbn1" column="#{ent.nboxRating}" row="#{ent.nboxPotential}">
+                                <amx:facet name="icon">
+                                    <dvtm:marker id="mrk1"
+                                                 source="/People/pics/#{ent.image}"
+                                                 width="28" height="28">
+                                        <amx:setPropertyListener id="spl5" from="#{ent.empId}"
+                                                                 to="#{applicationScope.UtilBean.id}"/>
+                                    </dvtm:marker>
+                                </amx:facet>
+                            </dvtm:nBoxNode>
+                        </dvtm:nBox>
+                    </amx:facet>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+            <amx:filmStripItem id="perfi2">
+                <amx:panelStretchLayout id="psl9">
+                    <amx:facet name="top">
+                        <amx:tableLayout id="tl7" width="100%">
+                            <amx:rowLayout id="rl18">
+                                <amx:cellFormat id="cf32" width="100%" halign="center" columnSpan="3" valign="top"
+                                                height="40px">
+                                    <amx:outputText value="COMPENSATION" id="ot12"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl19">
+                                <amx:cellFormat id="cf33" width="50%"/>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:facet>
+                    <amx:facet name="center">
+                        <dvtm:pieChart var="row" value="#{CompPie.collectionModel}" id="pc1" animationDuration="300"
+                                       animationOnDisplay="auto" rolloverBehavior="dim" sliceLabelPosition="inside"
+                                       animationOnDataChange="auto">
+                            <amx:facet name="dataStamp">
+                                <dvtm:pieDataItem sliceId="#{row.itemLabel}" value="#{row.itemValue}" id="pdi1"
+                                                  label="#{row.itemLabel}" explode="100" sliceLabel="#{row.itemLabel}"/>
+                            </amx:facet>
+                            <dvtm:legend position="bottom" id="lp1"/>
+                        </dvtm:pieChart>
+                    </amx:facet>
+                </amx:panelStretchLayout>
+            </amx:filmStripItem>
+        </amx:filmStrip>
+        <amx:panelStretchLayout id="schedule" inlineStyle="width:100%;height:100%">
+            <amx:facet name="top">
+                <amx:tableLayout id="tl2" width="100%" inlineStyle="margin-left:50px;"
+                                 rendered="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'true' : 'false'}">
+                    <amx:rowLayout id="rl1">
+                        <amx:cellFormat id="cf8" width="20px" inlineStyle="background-color:#FF66CC"/>
+                        <amx:cellFormat id="cf3" width="22%">
+                            <amx:selectBooleanCheckbox text="Time Off" id="sbc1" simple="true"
+                                                       styleClass="eventcheckbox" value="#{bindings.showTimeOff.inputValue}"
+                                                       valueChangeListener="#{bindings.filterEvents.execute}"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf9" width="20px" inlineStyle="background-color:#FFCC33"/>
+                        <amx:cellFormat id="cf4" width="22%">
+                            <amx:selectBooleanCheckbox text="Event" id="sbc2" simple="true" styleClass="eventcheckbox"
+                                                       value="#{bindings.showEvent.inputValue}"
+                                                       valueChangeListener="#{bindings.filterEvents.execute}"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf10" width="20px" inlineStyle="background-color:#339966"/>
+                        <amx:cellFormat id="cf5" width="22%">
+                            <amx:selectBooleanCheckbox text="Training" id="sbc3" simple="true"
+                                                       styleClass="eventcheckbox" value="#{bindings.showTraining.inputValue}"
+                                                       valueChangeListener="#{bindings.filterEvents.execute}"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf11" width="20px" inlineStyle="background-color:#336699"/>
+                        <amx:cellFormat id="cf6" width="34%">
+                            <amx:selectBooleanCheckbox text="Customer Meeting" id="sbc4" simple="true"
+                                                       styleClass="eventcheckbox" value="#{bindings.showMeeting.inputValue}"
+                                                       valueChangeListener="#{bindings.filterEvents.execute}"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:facet>
+            <amx:facet name="center">
+                <amx:commandLink id="cl1" inlineStyle="position:absolute;right:0;top:0"
+                                 rendered="#{deviceScope.hardware.screen.diagonalSize le 6 ? 'true' : 'false'}">
+                    <amx:image id="im1" source="/images/filter.png" inlineStyle="width:25px;height:25px;"/>
+                    <amx:showPopupBehavior id="spb1" popupId="evtfilter" align="bottomEnd" alignId="cl1"/>
+                </amx:commandLink>
+                <dvtm:timeline id="timeline" startTime="#{applicationScope.UtilBean.timelineStart}"
+                               endTime="#{applicationScope.UtilBean.timelineEnd}" inlineStyle="height:100%;width:100%"
+                               itemSelection="single">
+                    <dvtm:timelineSeries id="ts2" var="evt" value="#{Events.collectionModel}">
+                        <dvtm:timelineItem startTime="#{evt.start}" endTime="#{evt.end}" title="#{evt.name}" id="ti2"
+                                           description="#{evt.description}" durationFillColor="#{evt.color}"/>
+                    </dvtm:timelineSeries>
+                    <dvtm:timeAxis id="ta1" scale="weeks"/>
+                </dvtm:timeline>
+            </amx:facet>
+        </amx:panelStretchLayout>
+        <amx:panelGroupLayout id="team" inlineStyle="width:100%;height:100%" halign="center" scrollPolicy="scroll">
+            <amx:panelGroupLayout id="pgl2" rendered="#{ReportCount.inputValue eq 0}">
+                <amx:spacer id="s1" height="50"/>
+                <amx:outputText value="This employee has no reports" id="ot9"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="teamwithreps" inlineStyle="height:100%;width:100%" scrollPolicy="scroll"
+                                  layout="wrap" rendered="#{ReportCount.inputValue gt 0}">
+                <amx:iterator var="row" value="#{Reports.collectionModel}" id="i3">
+                    <amx:panelGroupLayout id="pgl1"
+                                          inlineStyle="width:#{deviceScope.hardware.screen.diagonalSize gt 6 ? '120px' : '90px'};background-color: #f6f6f7;border: 1px solid #e7e7e9;margin:5px">
+                        <amx:commandLink id="cl4" actionListener="#{applicationScope.UtilBean.gotoPersonDetail}">
+                            <amx:tableLayout id="tl5" width="100%">
+                                <amx:rowLayout id="rl12">
+                                    <amx:cellFormat id="cf27" width="100%" halign="center">
+                                        <amx:image source="/People/pics/#{row.image}"
+                                                   id="i4"
+                                                   inlineStyle="-webkit-border-radius:#{deviceScope.hardware.screen.diagonalSize gt 6 ? '90px;width:90px;height:90px' : '60px;width:60px;height:60px'};border:1px #ccc solid;margin-top:4px"/>
+                                    </amx:cellFormat>
+                                </amx:rowLayout>
+                                <amx:rowLayout id="rl15">
+                                    <amx:cellFormat id="cf29" width="100%" halign="center">
+                                        <amx:outputText value="#{row.firstName} #{row.lastName}" id="ot7"
+                                                        inlineStyle="font-weight:bold;font-size:#{deviceScope.hardware.screen.diagonalSize gt 6 ? '12px' : '10px'}"/>
+                                    </amx:cellFormat>
+                                </amx:rowLayout>
+                                <amx:rowLayout id="rl4">
+                                    <amx:cellFormat id="cf7" width="100%" halign="center" height="44px" valign="top">
+                                        <amx:outputText value="#{row.title}" id="ot2"
+                                                        inlineStyle="font-weight:lighter;font-size:#{deviceScope.hardware.screen.diagonalSize gt 6 ? '12px' : '10px'}"/>
+                                    </amx:cellFormat>
+                                </amx:rowLayout>
+                            </amx:tableLayout>
+                            <amx:setPropertyListener id="spl1" from="#{row.empId}"
+                                                     to="#{applicationScope.UtilBean.id}"/>
+                        </amx:commandLink>
+                    </amx:panelGroupLayout>
+                </amx:iterator>
+            </amx:panelGroupLayout>
+        </amx:panelGroupLayout>
+    </amx:deck>
+    <amx:popup id="evtfilter" autoDismiss="true" animation="slideUp">
+        <amx:panelGroupLayout id="psl2"
+                              inlineStyle="width:#{deviceScope.hardware.screen.availableWidth}px;height:200px">
+            <amx:selectBooleanCheckbox text="Time Off" id="sbc5" simple="true" styleClass="eventcheckbox"
+                                       value="#{bindings.showTimeOff.inputValue}"
+                                       valueChangeListener="#{bindings.filterEvents.execute}"/>
+            <amx:selectBooleanCheckbox text="Event" id="sbc6" simple="true" styleClass="eventcheckbox"
+                                       value="#{bindings.showEvent.inputValue}"
+                                       valueChangeListener="#{bindings.filterEvents.execute}"/>
+            <amx:selectBooleanCheckbox text="Training" id="sbc7" simple="true" styleClass="eventcheckbox"
+                                       value="#{bindings.showTraining.inputValue}"
+                                       valueChangeListener="#{bindings.filterEvents.execute}"/>
+            <amx:selectBooleanCheckbox text="Customer Meeting" id="sbc8" simple="true" styleClass="eventcheckbox"
+                                       value="#{bindings.showMeeting.inputValue}"
+                                       valueChangeListener="#{bindings.filterEvents.execute}"/>
+        </amx:panelGroupLayout>
+    </amx:popup>
+</amx:fragmentDef>

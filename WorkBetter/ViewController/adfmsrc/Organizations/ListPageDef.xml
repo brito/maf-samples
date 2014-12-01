@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.21" id="ListPageDef"
+                Package="Organizations">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HRService" id="HRServiceIterator"/>
+    <accessorIterator MasterBinding="HRServiceIterator" Binds="departments" RangeSize="25" DataControl="HRService"
+                      BeanClass="mobile.Department" id="departmentsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="departmentsIterator" id="departments">
+      <nodeDefinition DefName="mobile.Department" Name="departments0">
+        <AttrNames>
+          <Item Value="deptId"/>
+          <Item Value="deptName"/>
+          <Item Value="address"/>
+          <Item Value="city"/>
+          <Item Value="state"/>
+          <Item Value="country"/>
+          <Item Value="postal"/>
+          <Item Value="deptMgrId"/>
+          <Item Value="deptMgrFirst"/>
+          <Item Value="deptMgrLast"/>
+          <Item Value="image"/>
+          <Item Value="deptMgrImage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="filterDepartments" RequiresUpdateModel="true" Action="invokeMethod" MethodName="filterDepartments"
+                  IsViewObjectMethod="false" DataControl="HRService" InstanceName="data.HRService.dataProvider"/>
+    <attributeValues IterBinding="HRServiceIterator" id="deptFilter">
+      <AttrNames>
+        <Item Value="deptFilter"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="departmentsIterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{viewScope.deptId}" NDType="java.lang.String"/>
+    </action>
+    <methodAction id="gotoSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="gotoSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+  </bindings>
+</pageDefinition>

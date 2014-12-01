@@ -1,0 +1,13 @@
+/*======  Filmstrip custom styling ========*/
+/* This is my custom styles to 1) stretch the filmstripitems, remove their border and remove controlarea margins */
+
+.amx-filmStrip-item-content {
+    border:none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.amx-filmStrip > div.amx-filmStrip_pageControl, .amx-filmStrip.amx-filmStrip-stretchItems > div.amx-filmStrip_pageControl {
+    margin-top:0;
+}
+
