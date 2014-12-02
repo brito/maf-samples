@@ -6,6 +6,12 @@
   <adfmf:featureReference id="fr2" refId="People"/>
   <adfmf:featureReference id="fr3" refId="Organizations"/>
   <adfmf:featureReference id="fr4" showOnNavigationBar="false" showOnSpringboard="false" refId="Springboard"/>
+  <adfmf:preferences>
+    <adfmf:preferenceGroup id="config" label="config">
+      <adfmf:preferenceText id="appTitle" label="Application Title" default="Child Welfare"/>
+      <adfmf:preferenceText id="appIcon" label="Application Icon"/>
+    </adfmf:preferenceGroup>
+  </adfmf:preferences>
   <adfmf:navigation>
     <adfmf:navigationBar enabled="false"/>
     <adfmf:springboard enabled="true" showSpringboardAtStartup="false" width="250"

@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
-          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
-    <amx:panelPage id="pp1" styleClass="adfmf-panelPage-springboard">
-        <amx:panelStretchLayout id="psl1">
-            <amx:facet name="top">
-                <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center">
-                    <amx:image id="i2" source="/images/workbetter.png" inlineStyle="width:32px;height:32px"/>
-                    <amx:outputText value="WorkBetter" id="ot1" inlineStyle="color:white;font-weight:normal"/>
-                </amx:panelGroupLayout>
-                <amx:spacer id="s1" height="20"/>
-            </amx:facet>
-            <amx:facet name="center">
-                <amx:listView var="row" value="#{bindings.features.collectionModel}" showMoreStrategy="autoScroll"
-                              bufferStrategy="viewport" id="lv1">
-                    <amx:listItem id="li1" actionListener="#{bindings.gotoFeature.execute}" showLinkIcon="false">
-                        <amx:tableLayout width="100%" id="tl1">
-                            <amx:rowLayout id="rl1">
-                                <amx:cellFormat width="40px" halign="center" id="cf3">
-                                    <amx:image source="#{row.image}" id="i1"
+<view xmlns="http://xmlns.oracle.com/adf/mf/amx">
+    <panelPage styleClass="adfmf-panelPage-springboard">
+        <panelStretchLayout>
+            <facet name="top">
+                <panelGroupLayout layout="horizontal" halign="center">
+                    <image source="#{preferenceScope.application.config.appIcon}" inlineStyle="width:32px;height:32px"
+                        rendered="#{preferenceScope.application.config.appIcon}"/>
+                    <outputText value="#{preferenceScope.application.config.appTitle}" 
+                        inlineStyle="color:white;font-weight:normal"/>
+                </panelGroupLayout>
+                <spacer height="20"/>
+            </facet>
+            <facet name="center">
+                <listView var="row" value="#{bindings.features.collectionModel}" showMoreStrategy="autoScroll"
+                              bufferStrategy="viewport">
+                    <listItem actionListener="#{bindings.gotoFeature.execute}" showLinkIcon="false">
+                        <tableLayout width="100%">
+                            <rowLayout>
+                                <cellFormat width="40px" halign="center">
+                                    <image source="#{row.image}"
                                                inlineStyle="width:32px;height:32px"/>
-                                </amx:cellFormat>
-                                <amx:cellFormat width="100%" height="43px" id="cf4">
-                                    <amx:outputText value="#{row.name}" id="ot3"/>
-                                </amx:cellFormat>
-                                <amx:cellFormat width="10px" id="cf1"/>
-                                <amx:cellFormat width="32px" halign="end" id="cf2">
-                                    <amx:outputText value="#{bindings.employeeCount.inputValue}"
-                                                    styleClass="adfmf-outputText-badge" id="ot22"
+                                </cellFormat>
+                                <cellFormat width="100%" height="43px">
+                                    <outputText value="#{row.name}"/>
+                                </cellFormat>
+                                <cellFormat width="10px"/>
+                                <cellFormat width="32px" halign="end">
+                                    <outputText value="#{bindings.employeeCount.inputValue}"
+                                                    styleClass="adfmf-outputText-badge"
                                                     rendered="#{row.id eq 'People' ? 'true' : 'false'}"/>
-                                    <amx:outputText value="#{bindings.departmentCount.inputValue}"
-                                                    styleClass="adfmf-outputText-badge" id="ot32"
+                                    <outputText value="#{bindings.departmentCount.inputValue}"
+                                                    styleClass="adfmf-outputText-badge"
                                                     rendered="#{row.id eq 'Organizations' ? 'true' : 'false'}"/>
-                                </amx:cellFormat>
-                            </amx:rowLayout>
-                        </amx:tableLayout>
-                        <amx:setPropertyListener id="spl5" from="" to="#{applicationScope.UtilBean.id}"/>
-                        <amx:setPropertyListener id="spl2" from="#{row.id}" to="#{viewScope.featureId}"/>
-                    </amx:listItem>
-                </amx:listView>
-            </amx:facet>
-            <amx:facet name="bottom">
-                <amx:panelGroupLayout id="pgl2" inlineStyle="width:100%" halign="center">
-                    <amx:image id="i3" source="/images/oracleLogo.png"
+                                </cellFormat>
+                            </rowLayout>
+                        </tableLayout>
+                        <setPropertyListener from="" to="#{applicationScope.UtilBean.id}"/>
+                        <setPropertyListener from="#{row.id}" to="#{viewScope.featureId}"/>
+                    </listItem>
+                </listView>
+            </facet>
+            <facet name="bottom">
+                <panelGroupLayout inlineStyle="width:100%" halign="center">
+                    <image source="/images/oracleLogo.png"
                                inlineStyle="width:176px;height:23px;margin-bottom:10px"/>
-                </amx:panelGroupLayout>
-            </amx:facet>
-        </amx:panelStretchLayout>
-    </amx:panelPage>
-</amx:view>
+                </panelGroupLayout>
+            </facet>
+        </panelStretchLayout>
+    </panelPage>
+</view>
