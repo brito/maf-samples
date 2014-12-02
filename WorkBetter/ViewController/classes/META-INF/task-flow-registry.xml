@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="adfc-mobile-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified"/>
+   <task-flow-descriptor path="Dashboard/taskflow.xml" id="taskflow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified"/>
+   <task-flow-descriptor path="People/people.xml" id="people" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="summaryView"/>
+      <input-parameter name="masterView"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="People/taskflow.xml" id="taskflow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified"/>
+   <task-flow-descriptor path="Dashboard/dashboard.xml" id="dashboard" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="dashboardView"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="Organizations/taskflow.xml" id="taskflow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified"/>
+   <task-flow-descriptor path="Organizations/organizations.xml" id="organizations" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified">
+      <input-parameter name="summaryView"/>
+      <input-parameter name="showTimeOff"/>
+      <input-parameter name="masterView"/>
+      <input-parameter name="showTraining"/>
+      <input-parameter name="showMeetings"/>
+      <input-parameter name="showEvents"/>
+   </task-flow-descriptor>
+</task-flow-registry>
