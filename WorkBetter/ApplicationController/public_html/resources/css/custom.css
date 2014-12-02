@@ -1,3 +1,17 @@
+@charset 'UTF-8';
+
+/* Font Icons — http://fontawesome.io */
+@import '../css/font-awesome.min.css';
+
+/* color palette
+   https://color.adobe.com/My-Color-Theme-color-theme-4941626/
+    darker main: #29a259 hsl(144,60%,40%)
+    lighter main: #33ca6f hsl(144,60%,50%)
+    lighter variant: #34c0b8 hsl(177,57%,48%)
+*/
+.amx-springboard, .adfmf-panelPage-springboard {
+    background-color: hsl(144,60%,40%) }
+
 /*======  Filmstrip custom styling ========*/
 /* This is my custom styles to 1) stretch the filmstripitems, remove their border and remove controlarea margins */
 
