@@ -1,381 +1,370 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
-                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt" xmlns:custom="http://xmlns.example.com/custom">
-    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1">
-        <description id="d1">Master fragment to show list/cards/map with search</description>
-        <attribute id="a16">
-            <description id="a16de">A string defining the type of master page, either Emp or Dept</description>
-            <attribute-name id="a16n">Type</attribute-name>
-            <attribute-type id="a16t">String</attribute-type>
-            <required id="a16r">true</required>
+<fragmentDef xmlns="http://xmlns.oracle.com/adf/mf/amx" xmlns:custom="http://xmlns.example.com/custom" xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment">
+        <description>Master fragment to show list/cards/map with search</description>
+        <attribute>
+            <description>A string defining the type of master page, either Emp or Dept</description>
+            <attribute-name>Type</attribute-name>
+            <attribute-type>String</attribute-type>
+            <required>true</required>
         </attribute>
-        <attribute id="a1">
-            <description id="a1de">A collection specified by a Tree Binding</description>
-            <attribute-name id="a1n">Collection</attribute-name>
-            <attribute-type id="a1t">Tree Binding</attribute-type>
-            <required id="a1r">true</required>
+        <attribute>
+            <description>A collection specified by a Tree Binding</description>
+            <attribute-name>Collection</attribute-name>
+            <attribute-type>Tree Binding</attribute-type>
+            <required>true</required>
         </attribute>
-        <attribute id="a9">
-            <description id="a9de">A string defining the hintText to display in the search field</description>
-            <attribute-name id="a9n">SearchText</attribute-name>
-            <attribute-type id="a9t">String</attribute-type>
-            <default-value id="a9d"></default-value>
+        <attribute>
+            <description>A string defining the hintText to display in the search field</description>
+            <attribute-name>SearchText</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a20">
-            <description id="a20de">An attribute binding defining the filter attribute to use</description>
-            <attribute-name id="a20n">FilterAttr</attribute-name>
-            <attribute-type id="a20t">Attribute Binding</attribute-type>
+        <attribute>
+            <description>An attribute binding defining the filter attribute to use</description>
+            <attribute-name>FilterAttr</attribute-name>
+            <attribute-type>Attribute Binding</attribute-type>
         </attribute>
-        <attribute id="a21">
-            <description id="a21de">A method binding defining the filter method to use</description>
-            <attribute-name id="a21n">FilterMethod</attribute-name>
-            <attribute-type id="a21t">Method Binding</attribute-type>
+        <attribute>
+            <description>A method binding defining the filter method to use</description>
+            <attribute-name>FilterMethod</attribute-name>
+            <attribute-type>Method Binding</attribute-type>
         </attribute>
-        <attribute id="a15">
-            <description id="a15de">A string defining the divider attribute to use in the list</description>
-            <attribute-name id="a15n">Divider</attribute-name>
-            <attribute-type id="a15t">String</attribute-type>
+        <attribute>
+            <description>A string defining the divider attribute to use in the list</description>
+            <attribute-name>Divider</attribute-name>
+            <attribute-type>String</attribute-type>
         </attribute>
-        <attribute id="a2">
-            <description id="a2de">A string defining the attribute in the collection used for the image</description>
-            <attribute-name id="a2n">Image</attribute-name>
-            <attribute-type id="a2t">String</attribute-type>
-            <required id="a2r">true</required>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the image</description>
+            <attribute-name>Image</attribute-name>
+            <attribute-type>String</attribute-type>
+            <required>true</required>
         </attribute>
-        <attribute id="a3">
-            <description id="a3de">A string defining the attribute in the collection used for the first part of the title text</description>
-            <attribute-name id="a3n">Title1a</attribute-name>
-            <attribute-type id="a3t">String</attribute-type>
-            <required id="a3r">true</required>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the first part of the title text</description>
+            <attribute-name>Title1a</attribute-name>
+            <attribute-type>String</attribute-type>
+            <required>true</required>
         </attribute>
-        <attribute id="a3b">
-            <description id="a3bde">A string defining the attribute in the collection used for the second part of the title text</description>
-            <attribute-name id="a3bn">Title1b</attribute-name>
-            <attribute-type id="a3bt">String</attribute-type>
-            <default-value id="a3bd"></default-value>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the second part of the title text</description>
+            <attribute-name>Title1b</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a4">
-            <description id="a4de">A string defining the attribute in the collection used for the middle sub-title text</description>
-            <attribute-name id="a4n">Title2</attribute-name>
-            <attribute-type id="a4t">String</attribute-type>
-            <required id="a4r">true</required>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the middle sub-title text</description>
+            <attribute-name>Title2</attribute-name>
+            <attribute-type>String</attribute-type>
+            <required>true</required>
         </attribute>
-        <attribute id="a5">
-            <description id="a5de">A string defining the attribute in the collection used for the bottom sub-title text</description>
-            <attribute-name id="a5n">Title3</attribute-name>
-            <attribute-type id="a5t">String</attribute-type>
-            <default-value id="a5d"></default-value>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the bottom sub-title text</description>
+            <attribute-name>Title3</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a6">
-            <description id="a6de">A string defining the attribute in the collection used for the first detail text</description>
-            <attribute-name id="a6n">Detail1</attribute-name>
-            <attribute-type id="a6t">String</attribute-type>
-            <default-value id="a6d"></default-value>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the first detail text</description>
+            <attribute-name>Detail1</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a7">
-            <description id="a7de">A string defining the attribute in the collection used for the second detail text</description>
-            <attribute-name id="a7n">Detail2</attribute-name>
-            <attribute-type id="a7t">String</attribute-type>
-            <default-value id="a7d"></default-value>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the second detail text</description>
+            <attribute-name>Detail2</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a8">
-            <description id="a8de">A string defining the attribute in the collection used for the third detail text</description>
-            <attribute-name id="a8n">Detail3</attribute-name>
-            <attribute-type id="a8t">String</attribute-type>
-            <default-value id="a8d"></default-value>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the third detail text</description>
+            <attribute-name>Detail3</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a10">
-            <description id="a10de">A string defining the address attribute to use in the map</description>
-            <attribute-name id="a10n">Address</attribute-name>
-            <attribute-type id="a10t">String</attribute-type>
-            <required id="a10r">true</required>
+        <attribute>
+            <description>A string defining the address attribute to use in the map</description>
+            <attribute-name>Address</attribute-name>
+            <attribute-type>String</attribute-type>
+            <required>true</required>
         </attribute>
-        <attribute id="a11">
-            <description id="a11de">A string defining the city attribute to use in the map</description>
-            <attribute-name id="a11n">City</attribute-name>
-            <attribute-type id="a11t">String</attribute-type>
-            <default-value id="a11d"></default-value>
+        <attribute>
+            <description>A string defining the city attribute to use in the map</description>
+            <attribute-name>City</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a12">
-            <description id="a12de">A string defining the state attribute to use in the map</description>
-            <attribute-name id="a12n">State</attribute-name>
-            <attribute-type id="a12t">String</attribute-type>
-            <default-value id="a12d"></default-value>
+        <attribute>
+            <description>A string defining the state attribute to use in the map</description>
+            <attribute-name>State</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a13">
-            <description id="a13de">A string defining the country attribute to use in the map</description>
-            <attribute-name id="a13n">Country</attribute-name>
-            <attribute-type id="a13t">String</attribute-type>
-            <default-value id="a13d"></default-value>
+        <attribute>
+            <description>A string defining the country attribute to use in the map</description>
+            <attribute-name>Country</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a14">
-            <description id="a14de">A string defining the postal attribute to use in the map</description>
-            <attribute-name id="a14n">Postal</attribute-name>
-            <attribute-type id="a14t">String</attribute-type>
-            <default-value id="a14d"></default-value>
+        <attribute>
+            <description>A string defining the postal attribute to use in the map</description>
+            <attribute-name>Postal</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
-        <attribute id="a17">
-            <description id="a17de">An integer defining the value for the first LED (Tenure)</description>
-            <attribute-name id="a17n">LED1</attribute-name>
-            <attribute-type id="a17t">int</attribute-type>
+        <attribute>
+            <description>An integer defining the value for the first LED (Tenure)</description>
+            <attribute-name>LED1</attribute-name>
+            <attribute-type>int</attribute-type>
         </attribute>
-        <attribute id="a18">
-            <description id="a18de">An integer defining the value for the second LED (Rating)</description>
-            <attribute-name id="a184n">LED2</attribute-name>
-            <attribute-type id="a18t">int</attribute-type>
+        <attribute>
+            <description>An integer defining the value for the second LED (Rating)</description>
+            <attribute-name>LED2</attribute-name>
+            <attribute-type>int</attribute-type>
         </attribute>
-        <attribute id="a19">
-            <description id="a19de">An integer defining the value for the third LED (compRatio)</description>
-            <attribute-name id="a19n">LED3</attribute-name>
-            <attribute-type id="a19t">int</attribute-type>
+        <attribute>
+            <description>An integer defining the value for the third LED (compRatio)</description>
+            <attribute-name>LED3</attribute-name>
+            <attribute-type>int</attribute-type>
         </attribute>
-        <attribute id="a22">
-            <description id="a22de">A method action binding defining the method to use to set the active row on swipe</description>
-            <attribute-name id="a22n">ActivateMethod</attribute-name>
-            <attribute-type id="a22t">int</attribute-type>
+        <attribute>
+            <description>A method action binding defining the method to use to set the active row on swipe</description>
+            <attribute-name>ActivateMethod</attribute-name>
+            <attribute-type>int</attribute-type>
         </attribute>
-        <attribute id="a23">
-            <description id="a23bde">A string defining the attribute in the collection used for the second part of the title3 text</description>
-            <attribute-name id="a23bn">Title3b</attribute-name>
-            <attribute-type id="a23bt">String</attribute-type>
-            <default-value id="a33bd"></default-value>
+        <attribute>
+            <description>A string defining the attribute in the collection used for the second part of the title3 text</description>
+            <attribute-name>Title3b</attribute-name>
+            <attribute-type>String</attribute-type>
+            <default-value></default-value>
         </attribute>
     </fragment>
-    <amx:panelStretchLayout id="psl1">
-        <amx:facet name="top">
-            <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" inlineStyle="width:100%">
-                <amx:panelGroupLayout id="searcharea"
-                                      inlineStyle="width:#{deviceScope.hardware.screen.availableWidth*.7}px">
-                    <custom:csearch id="custom1" value="#{FilterAttr.inputValue}"
+    <panelStretchLayout>
+        <facet name="top">
+            <panelGroupLayout layout="horizontal" halign="center" inlineStyle="width:100%">
+                <panelGroupLayout inlineStyle="width:#{deviceScope.hardware.screen.availableWidth*.7}px">
+                    <custom:csearch value="#{FilterAttr.inputValue}"
                                     valueChangeListener="#{FilterMethod.execute}" inlineStyle="" rendered="true"
                                     hintText="#{SearchText}"/>
-                </amx:panelGroupLayout>
-                <amx:spacer id="s1" width="10"/>
-                <amx:commandLink id="cb1" rendered="#{Type eq 'emp' ? 'true' : 'false'}" styleClass="tab_button">
-                    <amx:image id="i2"
-                               source="/images/listtoggle#{pageFlowScope.masterView eq 'list' ? 'white.png' : 'blue.png'}"
+                </panelGroupLayout>
+                <spacer width="10"/>
+                <commandLink rendered="#{Type eq 'emp' ? 'true' : 'false'}" styleClass="tab_button">
+                    <image source="/images/listtoggle#{pageFlowScope.masterView eq 'list' ? 'white.png' : 'blue.png'}"
                                inlineStyle="width:29px;height:29px;border:1px solid #0572ce;border-right:0;"/>
-                    <amx:setPropertyListener id="spl1" from="list" to="#{pageFlowScope.masterView}"/>
-                </amx:commandLink>
-                <amx:commandLink id="cb2"
-                                 rendered="#{Type eq 'dept' and deviceScope.hardware.screen.diagonalSize le 6 ? 'true' : 'false'}"
+                    <setPropertyListener from="list" to="#{pageFlowScope.masterView}"/>
+                </commandLink>
+                <commandLink rendered="#{Type eq 'dept' and deviceScope.hardware.screen.diagonalSize le 6 ? 'true' : 'false'}"
                                  styleClass="tab_button">
-                    <amx:image id="i3"
-                               source="/images/listtoggle#{pageFlowScope.masterView eq 'cardp' ? 'white.png' : 'blue.png'}"
+                    <image source="/images/listtoggle#{pageFlowScope.masterView eq 'cardp' ? 'white.png' : 'blue.png'}"
                                inlineStyle="width:29px;height:29px;border:1px solid #0572ce;border-right:0"/>
-                    <amx:setPropertyListener id="spl2" from="cardp" to="#{pageFlowScope.masterView}"/>
-                </amx:commandLink>
-                <amx:commandLink id="cl5" styleClass="tab_button"
+                    <setPropertyListener from="cardp" to="#{pageFlowScope.masterView}"/>
+                </commandLink>
+                <commandLink styleClass="tab_button"
                                  rendered="#{Type eq 'dept' and deviceScope.hardware.screen.diagonalSize gt 6 ? 'true' : 'false'}">
-                    <amx:image id="i11"
-                               source="/images/cardtoggle#{pageFlowScope.masterView eq 'cardt' ? 'white.png' : 'blue.png'}"
+                    <image source="/images/cardtoggle#{pageFlowScope.masterView eq 'cardt' ? 'white.png' : 'blue.png'}"
                                inlineStyle="width:29px;height:29px;border:1px solid #0572ce;border-right:0"/>
-                    <amx:setPropertyListener id="spl11" from="cardt" to="#{pageFlowScope.masterView}"/>
-                </amx:commandLink>
-                <amx:commandLink id="cb3" styleClass="tab_button">
-                    <amx:image id="i4"
-                               source="/images/maptoggle#{pageFlowScope.masterView eq 'map' ? 'white.png' : 'blue.png'}"
+                    <setPropertyListener from="cardt" to="#{pageFlowScope.masterView}"/>
+                </commandLink>
+                <commandLink styleClass="tab_button">
+                    <image source="/images/maptoggle#{pageFlowScope.masterView eq 'map' ? 'white.png' : 'blue.png'}"
                                inlineStyle="width:29px;height:29px;border:1px solid #0572ce"/>
-                    <amx:setPropertyListener id="spl3" from="map" to="#{pageFlowScope.masterView}"/>
-                </amx:commandLink>
-            </amx:panelGroupLayout>
-        </amx:facet>
-        <amx:facet name="center">
-            <amx:deck id="d2" displayedChild="#{pageFlowScope.masterView}" inlineStyle="width:100%;height:100%">
-                <amx:listView id="list" var="row" value="#{Collection.collectionModel}"
+                    <setPropertyListener from="map" to="#{pageFlowScope.masterView}"/>
+                </commandLink>
+            </panelGroupLayout>
+        </facet>
+        <facet name="center">
+            <deck displayedChild="#{pageFlowScope.masterView}" inlineStyle="width:100%;height:100%">
+                <listView var="row" value="#{Collection.collectionModel}"
                               fetchSize="#{Collection.rangeSize}"
                               selectedRowKeys="#{Collection.collectionModel.selectedRow}"
                               selectionListener="#{Collection.collectionModel.makeCurrent}"
                               showMoreStrategy="autoScroll" inlineStyle="width:100%;height:100%"
                               dividerAttribute="#{Divider}" dividerMode="firstLetter" showDividerCount="true"
                               bufferStrategy="additive">
-                    <amx:listItem id="li1" showLinkIcon="false" action="#{UtilBean.followAction}">
-                        <amx:tableLayout width="100%" id="tl2">
-                            <amx:rowLayout id="rl2">
-                                <amx:cellFormat width="#{deviceScope.hardware.screen.diagonalSize gt 6 ? '90' : '50'}px"
+                    <listItem showLinkIcon="false" action="#{UtilBean.followAction}">
+                        <tableLayout width="100%">
+                            <rowLayout>
+                                <cellFormat width="#{deviceScope.hardware.screen.diagonalSize gt 6 ? '90' : '50'}px"
                                                 halign="center"
-                                                rowSpan="#{deviceScope.hardware.screen.diagonalSize gt 6 ? '3' : '2'}"
-                                                id="cf3" height="44px">
-                                    <amx:image source="pics/#{row[Image]}" id="i1"
+                                                rowSpan="#{deviceScope.hardware.screen.diagonalSize gt 6 ? '3' : '2'}" height="44px">
+                                    <image source="pics/#{row[Image]}"
                                                inlineStyle="margin:0;#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'width:60px;height:60px;margin-top:13px;margin-bottom:10px;-webkit-border-radius:60px;border:1px #ccc solid;' : 'width:30px;height:30px;margin-top:5px;-webkit-border-radius:30px;border:1px #ccc solid;'}"/>
-                                </amx:cellFormat>
-                                <amx:cellFormat width="50%"
-                                                height="#{deviceScope.hardware.screen.diagonalSize gt 6 ? '35px' : '25px'}"
-                                                id="cf6" valign="bottom">
-                                    <amx:outputText value="#{row[Title1a]} #{row[Title1b]}" id="ot2"
+                                </cellFormat>
+                                <cellFormat width="50%"
+                                                height="#{deviceScope.hardware.screen.diagonalSize gt 6 ? '35px' : '25px'}" valign="bottom">
+                                    <outputText value="#{row[Title1a]} #{row[Title1b]}"
                                                     inlineStyle="margin:0"/>
-                                </amx:cellFormat>
-                                <amx:cellFormat id="cf2" width="50%"
+                                </cellFormat>
+                                <cellFormat width="50%"
                                                 rendered="#{deviceScope.hardware.screen.diagonalSize gt 8 or row.active eq 'true' ? 'true' : 'false'}"
                                                 rowSpan="#{deviceScope.hardware.screen.diagonalSize gt 6 ? '3' : '2'}">
-                                    <amx:panelGroupLayout id="pgl2" layout="horizontal">
-                                        <amx:goLink id="gl6" url="facetime:#{row[Detail1]}"
+                                    <panelGroupLayout layout="horizontal">
+                                        <goLink url="facetime:#{row[Detail1]}"
                                                     styleClass="adfmf-goLink-noUnderline tab_button"
                                                     rendered="#{deviceScope.device.os eq 'iOS'}">
-                                            <amx:image id="i5" source="/images/func_facetime_64@2x.png"
+                                            <image source="/images/func_facetime_64@2x.png"
                                                        inlineStyle="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'width:60px;height:60px' : 'width:32px;height:32px'}"/>
-                                        </amx:goLink>
-                                        <amx:goLink id="gl1" url="tel:#{row[Detail1]}"
+                                        </goLink>
+                                        <goLink url="tel:#{row[Detail1]}"
                                                     styleClass="adfmf-goLink-noUnderline tab_button"
                                                     rendered="#{deviceScope.device.os ne 'iOS' and deviceScope.hardware.screen.diagonalSize le 6}">
-                                            <amx:image id="i6" source="/images/func_phone_64@2x.png"
+                                            <image source="/images/func_phone_64@2x.png"
                                                        inlineStyle="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'width:60px;height:60px' : 'width:32px;height:32px'}"/>
-                                        </amx:goLink>
-                                        <amx:commandLink id="cl2" styleClass="adfmf-commandLink-noUnderline tab_button"
+                                        </goLink>
+                                        <commandLink styleClass="adfmf-commandLink-noUnderline tab_button"
                                                          actionListener="#{UtilBean.sendSMS}"
                                                          rendered="#{deviceScope.device.os ne 'iOS' and deviceScope.hardware.screen.diagonalSize gt 6}">
-                                            <amx:image id="i7" source="/images/func_phone_64@2x.png"
+                                            <image source="/images/func_phone_64@2x.png"
                                                        inlineStyle="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'width:60px;height:60px' : 'width:32px;height:32px'}"/>
-                                            <amx:setPropertyListener id="spl4" from="#{row[Detail1]}"
+                                            <setPropertyListener from="#{row[Detail1]}"
                                                                      to="#{applicationScope.sms}"/>
-                                        </amx:commandLink>
-                                        <amx:commandLink id="cl1" styleClass="adfmf-commandLink-noUnderline tab_button"
+                                        </commandLink>
+                                        <commandLink styleClass="adfmf-commandLink-noUnderline tab_button"
                                                          actionListener="#{UtilBean.sendSMS}">
-                                            <amx:image id="i8" source="/images/func_sms_64@2x.png"
+                                            <image source="/images/func_sms_64@2x.png"
                                                        inlineStyle="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'width:60px;height:60px' : 'width:32px;height:32px'}"/>
-                                            <amx:setPropertyListener id="spl5" from="#{row[Detail2]}"
+                                            <setPropertyListener from="#{row[Detail2]}"
                                                                      to="#{applicationScope.sms}"/>
-                                        </amx:commandLink>
-                                        <amx:commandLink id="cl3" styleClass="adfmf-commandLink-noUnderline tab_button"
+                                        </commandLink>
+                                        <commandLink styleClass="adfmf-commandLink-noUnderline tab_button"
                                                          actionListener="#{UtilBean.sendEmail}">
-                                            <amx:image id="i9" source="/images/func_email_64_@2x.png"
+                                            <image source="/images/func_email_64_@2x.png"
                                                        inlineStyle="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'width:60px;height:60px' : 'width:32px;height:32px'}"/>
-                                            <amx:setPropertyListener id="spl10" from="#{row[Detail3]}"
+                                            <setPropertyListener from="#{row[Detail3]}"
                                                                      to="#{applicationScope.email}"/>
-                                        </amx:commandLink>
-                                    </amx:panelGroupLayout>
-                                </amx:cellFormat>
-                                <amx:cellFormat id="cf14" width="230px" halign="center"
+                                        </commandLink>
+                                    </panelGroupLayout>
+                                </cellFormat>
+                                <cellFormat width="230px" halign="center"
                                                 rendered="#{deviceScope.hardware.screen.diagonalSize gt 6 and row.active ne 'true' ? 'true' : 'false'}"
                                                 rowSpan="3">
-                                    <amx:panelGroupLayout id="pgl3" layout="horizontal">
-                                        <amx:panelGroupLayout id="led1" inlineStyle="width:70px;" halign="center">
-                                            <amx:outputText id="ledot1a" value="#{row[LED1]}"
+                                    <panelGroupLayout layout="horizontal">
+                                        <panelGroupLayout inlineStyle="width:70px;" halign="center">
+                                            <outputText value="#{row[LED1]}"
                                                             inlineStyle="font-size:40px;color:#339966"/>
-                                            <amx:outputText id="ledot1b" value="Tenure"
+                                            <outputText value="Tenure"
                                                             inlineStyle="font-size:11px;color:#595960"/>
-                                        </amx:panelGroupLayout>
-                                        <amx:panelGroupLayout id="led2" inlineStyle="width:70px;" halign="center">
-                                            <amx:outputText id="ledot2a" value="#{row[LED2]}"
+                                        </panelGroupLayout>
+                                        <panelGroupLayout inlineStyle="width:70px;" halign="center">
+                                            <outputText value="#{row[LED2]}"
                                                             inlineStyle="font-size:40px;color:#ff9933"/>
-                                            <amx:outputText id="ledot2b" value="Performance"
+                                            <outputText value="Performance"
                                                             inlineStyle="font-size:11px;color:#595960"/>
-                                        </amx:panelGroupLayout>
-                                        <amx:panelGroupLayout id="led3" inlineStyle="width:90px;" halign="center">
-                                            <amx:outputText id="ledot3a" value="#{row[LED3]}"
+                                        </panelGroupLayout>
+                                        <panelGroupLayout inlineStyle="width:90px;" halign="center">
+                                            <outputText value="#{row[LED3]}"
                                                             inlineStyle="font-size:40px;color:#336699"/>
-                                            <amx:outputText id="ledot3b" value="Comp Ratio"
+                                            <outputText value="Comp Ratio"
                                                             inlineStyle="font-size:11px;color:#595960"/>
-                                        </amx:panelGroupLayout>
-                                    </amx:panelGroupLayout>
-                                </amx:cellFormat>
-                            </amx:rowLayout>
-                            <amx:rowLayout id="rl3">
-                                <amx:cellFormat height="18px" id="cf4">
-                                    <amx:outputText value="#{row[Title2]}" id="ot3"
+                                        </panelGroupLayout>
+                                    </panelGroupLayout>
+                                </cellFormat>
+                            </rowLayout>
+                            <rowLayout>
+                                <cellFormat height="18px">
+                                    <outputText value="#{row[Title2]}"
                                                     inlineStyle="margin-top:#{deviceScope.hardware.screen.diagonalSize gt 6 ? '-3px' : '-8px'}"
                                                     styleClass="adfmf-listItem-captionText"/>
-                                </amx:cellFormat>
-                            </amx:rowLayout>
-                            <amx:rowLayout id="rl4"
+                                </cellFormat>
+                            </rowLayout>
+                            <rowLayout
                                            rendered="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'true' : 'false'}">
-                                <amx:cellFormat height="22px}" id="cf5" valign="top">
-                                    <amx:outputText value="#{row[Title3]}" id="ot4" inlineStyle="margin-top:0"
+                                <cellFormat height="22px}" valign="top">
+                                    <outputText value="#{row[Title3]}" inlineStyle="margin-top:0"
                                                     styleClass="adfmf-listItem-captionText"/>
-                                </amx:cellFormat>
-                            </amx:rowLayout>
-                        </amx:tableLayout>
-                        <amx:setPropertyListener id="spl8" type="swipeStart" from="#{row.rowKey}"
+                                </cellFormat>
+                            </rowLayout>
+                        </tableLayout>
+                        <setPropertyListener type="swipeStart" from="#{row.rowKey}"
                                                  to="#{UtilBean.empId}"/>
-                        <amx:actionListener id="al1" type="swipeStart" binding="#{ActivateMethod.execute}"/>
-                    </amx:listItem>
-                </amx:listView>
-                <amx:panelGroupLayout id="cardt" inlineStyle="width:100%;height:100%" halign="center"
+                        <actionListener type="swipeStart" binding="#{ActivateMethod.execute}"/>
+                    </listItem>
+                </listView>
+                <panelGroupLayout inlineStyle="width:100%;height:100%" halign="center"
                                       scrollPolicy="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'scroll' : 'auto'}">
-                    <amx:panelGroupLayout id="cards" inlineStyle="height:100%;width:100%" scrollPolicy="scroll"
+                    <panelGroupLayout inlineStyle="height:100%;width:100%" scrollPolicy="scroll"
                                           layout="wrap"
                                           rendered="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'true' : 'false'}">
-                        <amx:iterator var="row" value="#{Collection.collectionModel}" id="iter1">
-                            <amx:panelGroupLayout id="deptcard" styleClass="card">
-                                <amx:commandLink id="cl4" action="detail"
+                        <iterator var="row" value="#{Collection.collectionModel}">
+                            <panelGroupLayout styleClass="card">
+                                <commandLink action="detail"
                                                  actionListener="#{bindings.setCurrentRowWithKeyValue.execute}">
-                                    <amx:tableLayout width="100%" id="ctl2">
-                                        <amx:rowLayout id="crl2">
-                                            <amx:cellFormat width="90px" halign="center" rowSpan="2" id="ccf3"
+                                    <tableLayout width="100%">
+                                        <rowLayout>
+                                            <cellFormat width="90px" halign="center" rowSpan="2"
                                                             height="44px">
-                                                <amx:image source="pics/#{row[Image]}" id="ci1"
+                                                <image source="pics/#{row[Image]}"
                                                            inlineStyle="margin:0;width:60px;height:60px;;margin-top:2px"/>
-                                            </amx:cellFormat>
-                                            <amx:cellFormat width="100%" height="35px" id="ccf6" valign="bottom">
-                                                <amx:outputText value="#{row[Title1a]}" id="cot2"
+                                            </cellFormat>
+                                            <cellFormat width="100%" height="35px" valign="bottom">
+                                                <outputText value="#{row[Title1a]}"
                                                                 inlineStyle="margin:0"/>
-                                            </amx:cellFormat>
-                                        </amx:rowLayout>
-                                        <amx:rowLayout id="crl3">
-                                            <amx:cellFormat height="18px" id="ccf4" valign="top">
-                                                <amx:outputText value="#{row[Title2]}" id="cot3"
+                                            </cellFormat>
+                                        </rowLayout>
+                                        <rowLayout>
+                                            <cellFormat height="18px" valign="top">
+                                                <outputText value="#{row[Title2]}"
                                                                 inlineStyle="margin:0;font-size:14px"/>
-                                            </amx:cellFormat>
-                                        </amx:rowLayout>
-                                        <amx:rowLayout id="crl4"
+                                            </cellFormat>
+                                        </rowLayout>
+                                        <rowLayout
                                                        rendered="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'true' : 'false'}">
-                                            <amx:cellFormat id="cf13"/>
-                                            <amx:cellFormat height="22px}" id="ccf5" valign="top">
-                                                <amx:outputText value="#{row[Title3]} #{row[Title3b]}" id="ot13"
+                                            <cellFormat/>
+                                            <cellFormat height="22px}" valign="top">
+                                                <outputText value="#{row[Title3]} #{row[Title3b]}"
                                                                 inlineStyle="margin:0;font-size:14px;color:#595960;"/>
-                                            </amx:cellFormat>
-                                        </amx:rowLayout>
-                                        <amx:rowLayout id="rl1"
+                                            </cellFormat>
+                                        </rowLayout>
+                                        <rowLayout
                                                        rendered="#{deviceScope.hardware.screen.diagonalSize gt 6 ? 'true' : 'false'}">
-                                            <amx:cellFormat id="cf16"/>
-                                            <amx:cellFormat id="cf15">
-                                                <amx:outputText value="CC#{row[Detail1]}A" id="cot10"
+                                            <cellFormat/>
+                                            <cellFormat>
+                                                <outputText value="CC#{row[Detail1]}A"
                                                                 inlineStyle="margin:0;font-size:14px;color:#595960;"/>
-                                            </amx:cellFormat>
-                                        </amx:rowLayout>
-                                    </amx:tableLayout>
-                                    <amx:setPropertyListener id="spl9" from="#{row.rowKey}" to="#{viewScope.deptId}"/>
-                                </amx:commandLink>
-                            </amx:panelGroupLayout>
-                        </amx:iterator>
-                    </amx:panelGroupLayout>
-                </amx:panelGroupLayout>
-                <amx:listView showMoreStrategy="autoScroll" bufferStrategy="additive" var="row"
-                              value="#{Collection.collectionModel}" id="cardp"
+                                            </cellFormat>
+                                        </rowLayout>
+                                    </tableLayout>
+                                    <setPropertyListener from="#{row.rowKey}" to="#{viewScope.deptId}"/>
+                                </commandLink>
+                            </panelGroupLayout>
+                        </iterator>
+                    </panelGroupLayout>
+                </panelGroupLayout>
+                <listView showMoreStrategy="autoScroll" bufferStrategy="additive" var="row"
+                              value="#{Collection.collectionModel}"
                               selectedRowKeys="#{Collection.collectionModel.selectedRow}"
                               selectionListener="#{Collection.collectionModel.makeCurrent}"
                               rendered="#{deviceScope.hardware.screen.diagonalSize le 6 ? 'true' : 'false'}"
                               inlineStyle="width:100%;height:100%">
-                    <amx:listItem id="li2" action="detail" showLinkIcon="false">
-                        <amx:tableLayout width="100%" id="tl1">
-                            <amx:rowLayout id="rl5">
-                                <amx:cellFormat width="40px" halign="center" rowSpan="2" id="cf1">
-                                    <amx:image source="pics/#{row[Image]}" id="i10"
+                    <listItem action="detail" showLinkIcon="false">
+                        <tableLayout width="100%">
+                            <rowLayout>
+                                <cellFormat width="40px" halign="center" rowSpan="2">
+                                    <image source="pics/#{row[Image]}"
                                                inlineStyle="width:30px;height:30px"/>
-                                </amx:cellFormat>
-                                <amx:cellFormat width="100%" height="28px" id="cf7">
-                                    <amx:outputText value="#{row[Title1a]}" id="ot1"/>
-                                </amx:cellFormat>
-                            </amx:rowLayout>
-                            <amx:rowLayout id="rl6">
-                                <amx:cellFormat width="100%" height="12px" id="cf8">
-                                    <amx:outputText value="#{row[Title2]}" styleClass="adfmf-listItem-captionText"
-                                                    id="ot6"/>
-                                </amx:cellFormat>
-                            </amx:rowLayout>
-                        </amx:tableLayout>
-                    </amx:listItem>
-                </amx:listView>
-                <amx:panelStretchLayout id="map" inlineStyle="width:100%;height:100%">
-                    <amx:facet name="center">
-                        <dvtm:geographicMap id="mapp" rendered="#{Type eq 'emp' ? 'true' : 'false'}">
-                            <dvtm:pointDataLayer value="#{Collection.collectionModel}" id="pdl1"
+                                </cellFormat>
+                                <cellFormat width="100%" height="28px">
+                                    <outputText value="#{row[Title1a]}"/>
+                                </cellFormat>
+                            </rowLayout>
+                            <rowLayout>
+                                <cellFormat width="100%" height="12px">
+                                    <outputText value="#{row[Title2]}" styleClass="adfmf-listItem-captionText"/>
+                                </cellFormat>
+                            </rowLayout>
+                        </tableLayout>
+                    </listItem>
+                </listView>
+                <panelStretchLayout inlineStyle="width:100%;height:100%">
+                    <facet name="center">
+                        <dvtm:geographicMap rendered="#{Type eq 'emp' ? 'true' : 'false'}">
+                            <dvtm:pointDataLayer value="#{Collection.collectionModel}"
                                                  selectedRowKeys="#{Collection.collectionModel.selectedRow}"
                                                  selectionListener="#{UtilBean.selectPersonDetail}"
                                                  dataSelection="single" var="row">
-                                <dvtm:pointLocation address="#{row[Address]}, #{row[City]}, #{row[State]}, #{row[Country]}"
-                                                    id="ptl1" type="address">
-                                    <dvtm:marker id="mrk1" action="detail"
+                                <dvtm:pointLocation address="#{row[Address]}, #{row[City]}, #{row[State]}, #{row[Country]}" type="address">
+                                    <dvtm:marker action="detail"
                                                  source="pics/#{row[Image]}"
                                                  width="28" height="28"
                                                  sourceSelected="pics/#{row[Image]}"
@@ -384,14 +373,13 @@
                                 </dvtm:pointLocation>
                             </dvtm:pointDataLayer>
                         </dvtm:geographicMap>
-                        <dvtm:geographicMap id="mapo" rendered="#{Type eq 'dept' ? 'true' : 'false'}">
-                            <dvtm:pointDataLayer value="#{Collection.collectionModel}" id="opdl1"
+                        <dvtm:geographicMap rendered="#{Type eq 'dept' ? 'true' : 'false'}">
+                            <dvtm:pointDataLayer value="#{Collection.collectionModel}"
                                                  selectedRowKeys="#{Collection.collectionModel.selectedRow}"
                                                  selectionListener="#{UtilBean.selectDeptDetail}" dataSelection="single"
                                                  var="row">
-                                <dvtm:pointLocation address="#{row[Address]}, #{row[City]}, #{row[State]}, #{row[Country]}"
-                                                    id="optl1" type="address">
-                                    <dvtm:marker id="omrk1" action="detail" source="pics/#{row[Image]}" width="28"
+                                <dvtm:pointLocation address="#{row[Address]}, #{row[City]}, #{row[State]}, #{row[Country]}" type="address">
+                                    <dvtm:marker action="detail" source="pics/#{row[Image]}" width="28"
                                                  height="28"
                                                  sourceSelected="pics/#{row[Image]}"
                                                  sourceHover="pics/#{row[Image]}"
@@ -399,9 +387,9 @@
                                 </dvtm:pointLocation>
                             </dvtm:pointDataLayer>
                         </dvtm:geographicMap>
-                    </amx:facet>
-                </amx:panelStretchLayout>
-            </amx:deck>
-        </amx:facet>
-    </amx:panelStretchLayout>
-</amx:fragmentDef>
+                    </facet>
+                </panelStretchLayout>
+            </deck>
+        </facet>
+    </panelStretchLayout>
+</fragmentDef>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
-  <adfmf:feature id="People" name="People" icon="images/people.png" image="images/people.png">
+  <adfmf:feature id="People" name="Children" icon="images/people.png" image="images/people.png">
     <adfmf:content id="People.1">
       <adfmf:amx file="People/taskflow.xml#taskflow">
         <adfmf:includes>
@@ -10,7 +10,7 @@
       </adfmf:amx>
     </adfmf:content>
   </adfmf:feature>
-  <adfmf:feature id="Organizations" name="Organizations" icon="images/departments.png" image="images/departments.png">
+  <adfmf:feature id="Organizations" name="Families" icon="images/departments.png" image="images/departments.png">
     <adfmf:content id="Organizations.1">
       <adfmf:amx file="Organizations/taskflow.xml#taskflow">
         <adfmf:includes>
@@ -20,7 +20,7 @@
       </adfmf:amx>
     </adfmf:content>
   </adfmf:feature>
-  <adfmf:feature id="Dashboard" name="Dashboard" icon="images/dashboard.png" image="images/dashboard.png">
+  <adfmf:feature id="Dashboard" name="My Cases" icon="images/dashboard.png" image="images/dashboard.png">
     <adfmf:content id="Dashboard.1">
       <adfmf:amx file="Dashboard/taskflow.xml#taskflow">
         <adfmf:includes>
