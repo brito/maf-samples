@@ -4,9 +4,7 @@
         <panelStretchLayout>
             <facet name="top">
                 <panelGroupLayout layout="horizontal" halign="center">
-                    <image source="#{preferenceScope.application.config.appIcon}" inlineStyle="width:32px;height:32px"
-                        rendered="#{preferenceScope.application.config.appIcon}"/>
-                    <outputText value="#{preferenceScope.application.config.appTitle}" 
+                    <outputText value="#{preferenceScope.application.config.appTitle}" styleClass="preferenceScope.application.config.appIcon"
                         inlineStyle="color:white;font-weight:normal"/>
                 </panelGroupLayout>
                 <spacer height="20"/>
