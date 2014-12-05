@@ -66,7 +66,7 @@ public class HHSService {
     private List getLocationRecords(){
         return new ArrayList(){{
             // TODO: http://schooldirectory.lacoe.edu/
-            add(new Location("School", "Baldwin Park", "3699 North Holly", 91706));
+            add(new Location("School", "Baldwin Park", "3699 North Holly", "91706"));
         }};
     }
     
