@@ -18,31 +18,56 @@ public class HHSService {
     private List cases = new ArrayList();
     private List caseResults = new ArrayList();
     
+    private String locationQuery = "";
+    private List locations = new ArrayList();
+    private List locationResults = new ArrayList();
+    
     public Child[] getChildren(){
         return (Child[]) childrenResults.toArray(new Child[childrenResults.size()]);
-    }    
+    }
     public Case[] getCases(){
         return (Case[]) caseResults.toArray(new Case[caseResults.size()]);
     }
+    public Location[] getLocations(){
+        return (Location[]) locationResults.toArray(new Location[locationResults.size()]);
+    }
 
     public HHSService(){
-        // TODO: add every child
-        //children.add(new Child());
-        
+        children = getChildRecords();
+        cases = getCaseRecords();
+        locations = getLocationRecords();
+
+        // randomly associate children with cases and locations
         for (int i = 0, size = children.size(); i < size; i++){
-            Child ch = (Child) children.get(i);
-            ch.populate(this);
-            // assign some cases
-            //cases.add(new Case("C20141122HV1","","",new Date,));
+            Child child = (Child) children.get(i);
+            // TODO
         }
         
-        for (int i = 0, size = cases.size(); i < size; i++){
-            Case c = (Case) cases.get(i);
-            c.populate(this);
-        }
-        
+        // simulate a null query (all results)
         filterChildren();
         filterCases();
+        // ask for nothing, receive the whole universe
+    }
+    
+    private List getChildRecords(){
+        return new ArrayList(){{
+            add(new Child("Sanchez", "Jerry", 16, "Human"));
+        }};
+    }
+    private List getCaseRecords(){
+        return new ArrayList(){{
+            // TODO: add cases
+            add(new Case("Open", "11/22/2014", "Home Visit", ""));
+            add(new Case("Closed", "09/12/2014", "Relocation", "Relocated to South Hill"));
+            add(new Case("Pending", "09/01/2014", "Child Abuse", "School provided visual proof"));
+            add(new Case("Closed", "07/04/2014", "Placement", "Jerry came into State care after..."));
+        }};
+    }
+    private List getLocationRecords(){
+        return new ArrayList(){{
+            // TODO: http://schooldirectory.lacoe.edu/
+            add(new Location("School", "Baldwin Park", "3699 North Holly", 91706));
+        }};
     }
     
     public void filterChildren(){
@@ -111,5 +136,13 @@ public class HHSService {
 
     public String getCaseQuery() {
         return caseQuery;
+    }
+    
+    public int getChildrenCount(){
+        return children.size();
+    }
+    
+    public int getCasesCount(){
+        return cases.size();
     }
 }
