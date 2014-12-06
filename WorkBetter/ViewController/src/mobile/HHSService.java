@@ -22,6 +22,7 @@ public class HHSService {
     private List locations = new ArrayList();
     private List locationResults = new ArrayList();
     
+    // it would be interesting to use synthetic methods for all the types instead
     public Child[] getChildren(){
         return (Child[]) childrenResults.toArray(new Child[childrenResults.size()]);
     }
@@ -50,11 +51,13 @@ public class HHSService {
     }
     
     private List getChildRecords(){
+        // TODO Child[] ChildRecordRESTService
         return new ArrayList(){{
             add(new Child("Sanchez", "Jerry", 16, "Human"));
         }};
     }
     private List getCaseRecords(){
+        // TODO Case[] CaseRecordRESTService
         return new ArrayList(){{
             // TODO: add cases
             add(new Case("Open", "11/22/2014", "Home Visit", ""));
@@ -64,6 +67,7 @@ public class HHSService {
         }};
     }
     private List getLocationRecords(){
+        // TODO Location[] LocationRecordRESTService
         return new ArrayList(){{
             // TODO: http://schooldirectory.lacoe.edu/
             add(new Location("School", "Baldwin Park", "3699 North Holly", "91706"));

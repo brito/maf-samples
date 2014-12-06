@@ -19,11 +19,9 @@ public class Case {
     
     private Child[] regarding;
     
-    private Date scheduled;
-    // TODO private Message[] notes;
-    private String notes;
+    private List tasks = new ArrayList();
     
-    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+    private Date scheduled;
 
     public Case(String status, String date, String type, String note) {
         this.recordId = this.getClass().getName() +
@@ -32,8 +30,8 @@ public class Case {
         
         this.status = status;
         this.type = type;
-        // TODO this.notes.add(new Message(type, author, content, now));
-        this.notes = note;
+        // TODO this.notes.add(new Message(type, author, content, time));
+        this.notes.add(note);
 
         // the recommended approach is
         // DateFormatter.parse(string)
@@ -52,7 +50,19 @@ public class Case {
     public String getImage(){
         return (String) this.images.get(0);
     }
+
+    private List notes;
+    public void setNote(String note){
+        List oldNotes = this.notes;
+        this.notes.add(note);
+        propertyChangeSupport.firePropertyChange("notes", oldNotes, note);
+    }
+    public String[] getNotes(){
+        return (String[]) this.notes.toArray(new String[this.notes.size()]);
+    }
+
     
+    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
     /* GENERATED */
 
     public void setRecordId(String recordId) {
@@ -103,16 +113,6 @@ public class Case {
 
     public Date getScheduled() {
         return scheduled;
-    }
-
-    public void setNotes(String notes) {
-        String oldNotes = this.notes;
-        this.notes = notes;
-        propertyChangeSupport.firePropertyChange("notes", oldNotes, notes);
-    }
-
-    public String getNotes() {
-        return notes;
     }
 
     public void setRegarding(Child[] regarding) {
