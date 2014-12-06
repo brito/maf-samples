@@ -18,8 +18,18 @@ public class Case {
     private String status;
     
     private Child[] regarding;
-    
+    private List notes = new ArrayList();
     private List tasks = new ArrayList();
+    private List images = new ArrayList();
+    
+    public void setTask(Task task){
+        List oldTasks = this.tasks;
+        this.tasks.add(task);
+        propertyChangeSupport.firePropertyChange("tasks", oldTasks, task);
+    }
+    public Task[] getTasks(){
+        return (Task[]) this.tasks.toArray(new Task[tasks.size()]);
+    }
     
     private Date scheduled;
 
@@ -41,7 +51,6 @@ public class Case {
     }
     
     // TODO: remove(image), get(index)
-    private List images = new ArrayList();
     public void setImage(String image){
         List oldImages = this.images;
         this.images.add(image);
@@ -51,7 +60,6 @@ public class Case {
         return (String) this.images.get(0);
     }
 
-    private List notes;
     public void setNote(String note){
         List oldNotes = this.notes;
         this.notes.add(note);

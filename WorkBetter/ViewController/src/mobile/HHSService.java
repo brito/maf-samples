@@ -41,7 +41,22 @@ public class HHSService {
         // randomly associate children with cases and locations
         for (int i = 0, size = children.size(); i < size; i++){
             Child child = (Child) children.get(i);
-            // TODO
+            // TODO add cases
+            // TODO add locations
+        }
+        
+        // populate checklists for cases
+        // https://www.childwelfare.gov/systemwide/laws_policies/statutes/homestudyreqs.pdf
+        for (int i = 0, size = cases.size(); i < size; i++){
+            Case c = (Case) cases.get(i);
+            // TODO public interface Checklist<type> for type in cases
+            if (c.getType().matches("Home Visit")) {
+                c.setTask(new Task("Accessible Help", "Telephone service shall be readily accessible in the home at all times."));
+                c.setTask(new Task("Vehicle Safety", "The caregiver shall ensure that persons who transport a child use vehicles that are in safe operating condition. The caregiver is\n" + 
+                    "prohibited from smoking or permitting any person from smoking a pipe, cigar, or cigarette containing tobacco or any other plant in a\n" + 
+                    "motor vehicle when minor children are present. "));
+                c.setTask(new Task("Bedroom Sharing", "No more than two children shall share a bedroom"));
+            }
         }
         
         // simulate a null query (all results)
@@ -59,7 +74,7 @@ public class HHSService {
     private List getCaseRecords(){
         // TODO Case[] CaseRecordRESTService
         return new ArrayList(){{
-            // TODO: add cases
+            // TODO: add case checklists
             add(new Case("Open", "11/22/2014", "Home Visit", ""));
             add(new Case("Closed", "09/12/2014", "Relocation", "Relocated to South Hill"));
             add(new Case("Pending", "09/01/2014", "Child Abuse", "School provided visual proof"));
@@ -104,8 +119,8 @@ public class HHSService {
     }
 
 
-    private transient PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
-    private transient ProviderChangeSupport providerChangeSupport = new ProviderChangeSupport(this);
+    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+    private ProviderChangeSupport providerChangeSupport = new ProviderChangeSupport(this);
     public void addPropertyChangeListener(PropertyChangeListener l) {
         propertyChangeSupport.addPropertyChangeListener(l);
     }
