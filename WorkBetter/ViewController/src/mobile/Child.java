@@ -16,6 +16,7 @@ public class Child {
     private String lastName;
     private String birthState;
     private Date born;
+    private String gender;
     private String race;
     
     // "focus for group loyalty"
@@ -179,7 +180,27 @@ public class Child {
     public String getRecordId() {
         return recordId;
     }
-    
+
+    public void setBirthState(String birthState) {
+        String oldBirthState = this.birthState;
+        this.birthState = birthState;
+        propertyChangeSupport.firePropertyChange("birthState", oldBirthState, birthState);
+    }
+
+    public String getBirthState() {
+        return birthState;
+    }
+
+    public void setGender(String gender) {
+        String oldGender = this.gender;
+        this.gender = gender;
+        propertyChangeSupport.firePropertyChange("gender", oldGender, gender);
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
     public void addPropertyChangeListener(PropertyChangeListener l) {
         propertyChangeSupport.addPropertyChangeListener(l);
     }
